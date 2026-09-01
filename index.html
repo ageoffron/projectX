@@ -8,7 +8,7 @@
       name="description"
       content="About Anthony Geoffron: principal systems engineer working on Linux platforms, data centers, security, and reliable infrastructure."
     />
-    <meta name="theme-color" content="#0c100e" />
+    <meta name="theme-color" content="#07090c" />
     <meta property="og:title" content="Anthony Geoffron" />
     <meta
       property="og:description"
@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -41,7 +42,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
-        <a href="#work">Work</a>
+        <a href="#interests">Interests</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -136,42 +137,37 @@
         </ul>
       </section>
 
-      <section class="section" id="work">
+      <section class="section" id="interests">
         <div class="section-label">
           <span class="idx">03</span>
-          <h2>Public work</h2>
+          <h2>Personal interests</h2>
         </div>
-        <div class="work-stack">
-          <article class="work-card">
-            <p class="work-meta">PowerShell · Original</p>
-            <h3>
-              <a href="https://github.com/ageoffron/psaprs">psaprs</a>
-            </h3>
+        <ul class="interest-grid">
+          <li>
+            <p class="interest-meta">Endurance</p>
+            <h3>Ironman triathlon</h3>
             <p>
-              An amateur-radio PowerShell module that signs into APRS-IS, filters
-              nearby traffic, and can write a live KML file for Google Earth.
+              Long-course days: swim, bike, run, and the patience those
+              distances demand.
             </p>
-          </article>
-          <article class="work-card">
-            <p class="work-meta">Python · Original</p>
-            <h3>
-              <a href="https://github.com/ageoffron/Py-GPS-StepMotor">Py-GPS-StepMotor</a>
-            </h3>
+          </li>
+          <li>
+            <p class="interest-meta">Road</p>
+            <h3>Marathon</h3>
             <p>
-              A hardware experiment tying GPS input to a stepper motor — small,
-              physical, and still on GitHub from the early tinkering years.
+              Early miles, race-day pacing, and the quiet that only shows up
+              after a few hours on the road.
             </p>
-          </article>
-          <article class="work-card">
-            <p class="work-meta">Interests</p>
-            <h3>What I keep around</h3>
+          </li>
+          <li>
+            <p class="interest-meta">Kitchen</p>
+            <h3>Cooking</h3>
             <p>
-              Public forks lean toward secrets management, Kubernetes, security
-              orchestration, observability, and bare-metal tooling — Vault,
-              DefectDojo, secureCodeBox, and friends.
+              Another kind of systems work — mise en place, timing, and feeding
+              people well.
             </p>
-          </article>
-        </div>
+          </li>
+        </ul>
       </section>
 
       <section class="section contact" id="contact">
@@ -201,5 +197,6 @@
       <p>Anthony Geoffron</p>
       <p class="fine">Personal site · GitHub Pages</p>
     </footer>
+    <script src="starfield.js"></script>
   </body>
 </html>
