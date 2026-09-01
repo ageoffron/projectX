@@ -1,7 +1,7 @@
 :root {
-  --bg: #0c100e;
-  --bg-elev: #151a17;
-  --bg-elev-2: #1c2320;
+  --bg: #000000;
+  --bg-elev: #0a0a0a;
+  --bg-elev-2: #111111;
   --line: rgba(235, 230, 218, 0.12);
   --text: #ebe6da;
   --muted: #9b9688;
@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: #000;
 }
 
 body {
@@ -29,15 +30,17 @@ body {
   font-family: "Figtree", "Segoe UI", sans-serif;
   font-size: 1.0625rem;
   line-height: 1.65;
-  background-color: #07090c;
+  background: transparent;
 }
 
 #starfield {
   position: fixed;
   inset: 0;
   z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  background: #000;
   pointer-events: none;
 }
 
@@ -87,7 +90,7 @@ a:focus-visible,
   gap: 1rem;
   padding: 0.85rem var(--gutter);
   border-bottom: 1px solid var(--line);
-  background: rgba(7, 9, 12, 0.72);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(16px);
 }
 
@@ -232,7 +235,7 @@ main {
   padding: 1.25rem 1.35rem;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(21, 26, 23, 0.78);
+  background: rgba(0, 0, 0, 0.62);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 }
@@ -268,7 +271,7 @@ main {
   padding: 1.2rem 1.2rem 1.3rem;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(21, 26, 23, 0.72);
+  background: rgba(0, 0, 0, 0.58);
   backdrop-filter: blur(10px);
 }
 
@@ -296,7 +299,7 @@ main {
   padding: 1.35rem 1.3rem 1.5rem;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(21, 26, 23, 0.74);
+  background: rgba(0, 0, 0, 0.58);
   backdrop-filter: blur(10px);
 }
 
@@ -331,7 +334,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
-  background: rgba(21, 26, 23, 0.78);
+  background: rgba(0, 0, 0, 0.62);
   backdrop-filter: blur(10px);
 }
 
