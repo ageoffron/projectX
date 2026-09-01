@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Page not found — Anthony Geoffron</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
-    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div id="scene" aria-hidden="true">
+      <div class="cube" id="cube">
+        <div class="cube-face cube-face-front"></div>
+        <div class="cube-face cube-face-back"></div>
+        <div class="cube-face cube-face-right"></div>
+        <div class="cube-face cube-face-left"></div>
+        <div class="cube-face cube-face-top"></div>
+        <div class="cube-face cube-face-bottom"></div>
+      </div>
+    </div>
     <main class="hero">
       <p class="kicker">404</p>
       <h1>Nothing here.</h1>
       <p class="lede">That path does not resolve. Head back to the about page.</p>
       <p><a href="index.html">Return home</a></p>
     </main>
-    <script src="starfield.js?v=3"></script>
+    <script src="cube.js?v=4"></script>
   </body>
 </html>
