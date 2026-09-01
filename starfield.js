@@ -6,32 +6,47 @@
   if (!ctx) return;
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const MAX_Z = 1.8;
+  const MIN_Z = 0.12;
+  const SPEED = 0.0034;
 
   let width = 0;
   let height = 0;
+  let focal = 320;
   let stars = [];
 
   function starCount() {
-    return Math.round(Math.min(420, Math.max(180, (width * height) / 4200)));
+    return Math.round(Math.min(380, Math.max(160, (width * height) / 4800)));
+  }
+
+  function resetStar(star, scatterZ) {
+    star.x = (Math.random() - 0.5) * 1.15;
+    star.y = (Math.random() - 0.5) * 1.15;
+    star.z = scatterZ ? MIN_Z + Math.random() * (MAX_Z - MIN_Z) : MAX_Z;
   }
 
   function spawn() {
     stars = Array.from({ length: starCount() }, () => {
-      const depth = Math.random();
-      return {
-        x: Math.random() * width,
-        y: Math.random() * height,
-        speed: 0.06 + (1 - depth) * 0.22,
-        size: depth < 0.12 ? 2.5 : depth < 0.4 ? 1.6 : 1,
-        alpha: 0.65 + (1 - depth) * 0.35,
-      };
+      const star = { x: 0, y: 0, z: 0 };
+      resetStar(star, true);
+      return star;
     });
+  }
+
+  function project(star, z) {
+    const depth = z ?? star.z;
+    const scale = focal / depth;
+    return {
+      x: width / 2 + star.x * scale,
+      y: height / 2 + star.y * scale,
+    };
   }
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = window.innerWidth;
     height = window.innerHeight;
+    focal = Math.min(width, height) * 0.52;
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
     canvas.style.width = `${width}px`;
@@ -46,19 +61,37 @@
 
     for (const star of stars) {
       if (move) {
-        star.y += star.speed;
-        if (star.y > height + 3) {
-          star.y = -3;
-          star.x = Math.random() * width;
-        }
+        star.z -= SPEED;
       }
 
-      ctx.globalAlpha = star.alpha;
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(star.x, star.y, star.size, star.size);
-    }
+      const point = project(star);
+      const offscreen =
+        point.x < -20 || point.x > width + 20 || point.y < -20 || point.y > height + 20;
 
-    ctx.globalAlpha = 1;
+      if (star.z < MIN_Z || offscreen) {
+        resetStar(star, false);
+        continue;
+      }
+
+      const closeness = 1 - star.z / MAX_Z;
+      const size = 0.7 + closeness * 2.3;
+      const alpha = 0.28 + closeness * 0.72;
+
+      if (closeness > 0.35) {
+        const tail = project(star, star.z + 0.08);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.4})`;
+        ctx.lineWidth = Math.max(1, size * 0.55);
+        ctx.beginPath();
+        ctx.moveTo(tail.x, tail.y);
+        ctx.lineTo(point.x, point.y);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+      ctx.beginPath();
+      ctx.arc(point.x, point.y, size * 0.55, 0, Math.PI * 2);
+      ctx.fill();
+    }
   }
 
   function tick() {
