@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in — Anthony Geoffron</title>
+    <meta name="description" content="Sign in with Google or X." />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=6" />
+  </head>
+  <body class="login-page">
+    <div id="scene" aria-hidden="true">
+      <div class="cube" id="cube">
+        <div class="cube-face cube-face-front"></div>
+        <div class="cube-face cube-face-back"></div>
+        <div class="cube-face cube-face-right"></div>
+        <div class="cube-face cube-face-left"></div>
+        <div class="cube-face cube-face-top"></div>
+        <div class="cube-face cube-face-bottom"></div>
+      </div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="./">
+        <img
+          class="brand-mark"
+          src="assets/portrait.png"
+          alt=""
+          width="36"
+          height="36"
+        />
+        <span class="brand-text">AG</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#about">About</a>
+        <a href="./#focus">Focus</a>
+        <a href="./#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main" class="login-main">
+      <section class="login-hero" aria-labelledby="login-title">
+        <p class="kicker">Account</p>
+        <h1 id="login-title">Log <em>in</em></h1>
+        <p class="lede login-lede">
+          Continue with Google or X to sign in.
+        </p>
+
+        <div id="login-actions" class="login-actions">
+          <button type="button" class="oauth-btn oauth-google" data-provider="google">
+            <span class="oauth-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                <path
+                  fill="#EA4335"
+                  d="M12 10.2v3.9h5.5c-.2 1.3-.9 2.4-1.9 3.1l3.1 2.4c1.8-1.7 2.9-4.2 2.9-7.2 0-.7-.1-1.4-.2-2.1H12z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M5.3 14.3c-.3-.8-.4-1.6-.4-2.3s.2-1.6.4-2.3L2 7.2C1.4 8.6 1 10.3 1 12s.4 3.4 1 4.8l3.3-2.5z"
+                />
+                <path
+                  fill="#4A90E2"
+                  d="M12 5.5c1.5 0 2.9.5 4 1.5l2.9-2.9C16.9 2.3 14.6 1.3 12 1.3 7.8 1.3 4.2 3.7 2 7.2l3.3 2.5C6.3 7.2 8.9 5.5 12 5.5z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M12 22.7c2.6 0 4.9-.9 6.6-2.4l-3.1-2.4c-.9.6-2.1 1-3.5 1-3.1 0-5.7-1.7-6.7-4.2L2 16.8C4.2 20.3 7.8 22.7 12 22.7z"
+                />
+              </svg>
+            </span>
+            <span class="btn-label">Continue with Google</span>
+          </button>
+
+          <button type="button" class="oauth-btn oauth-x" data-provider="x">
+            <span class="oauth-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                <path
+                  fill="currentColor"
+                  d="M18.9 2H22l-6.8 7.8L23 22h-6.5l-5.1-6.7L5.6 22H2.5l7.3-8.3L1 2h6.6l4.6 6.1L18.9 2zm-1.1 18h1.8L6.3 3.9H4.4L17.8 20z"
+                />
+              </svg>
+            </span>
+            <span class="btn-label">Continue with X</span>
+          </button>
+        </div>
+
+        <p id="login-status" class="login-status" role="status" aria-live="polite" hidden></p>
+
+        <aside id="login-setup" class="login-setup" hidden>
+          <h2>Setup required</h2>
+          <ol>
+            <li>Create a Firebase project and a Web app.</li>
+            <li>Paste the web config into <code>auth-config.js</code>.</li>
+            <li>Enable <strong>Google</strong> and <strong>Twitter</strong> under Authentication → Sign-in method.</li>
+            <li>Authorize domain <code>ageoffron.github.io</code>.</li>
+            <li>For X, add your X API Key and Secret in the Twitter provider settings.</li>
+          </ol>
+          <p class="login-setup-note">Details are in the project README.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Anthony Geoffron</p>
+      <p class="fine">GitHub Pages</p>
+    </footer>
+    <script src="cube.js?v=6"></script>
+    <script src="auth-config.js?v=6"></script>
+    <script src="auth.js?v=6"></script>
+  </body>
+</html>
