@@ -497,6 +497,12 @@ main {
   gap: 0.75rem;
 }
 
+.login-actions[hidden],
+.login-setup[hidden],
+.login-status[hidden] {
+  display: none !important;
+}
+
 .oauth-btn {
   display: inline-flex;
   align-items: center;
