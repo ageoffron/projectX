@@ -401,6 +401,217 @@ main {
   }
 }
 
+/* Auth / login */
+.auth-slot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: 0.35rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+}
+
+.auth-link {
+  color: var(--text) !important;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  color: var(--accent) !important;
+}
+
+.auth-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 11rem;
+}
+
+.auth-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-elev-2);
+  flex-shrink: 0;
+}
+
+.auth-avatar-fallback {
+  display: inline-grid;
+  place-items: center;
+  color: #1a1408;
+  background: var(--brass);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.auth-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.auth-sign-out {
+  appearance: none;
+  margin: 0;
+  padding: 0.2rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.auth-sign-out:hover {
+  color: var(--text);
+}
+
+.auth-sign-out:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+.login-main {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 8.5rem);
+}
+
+.login-hero {
+  width: min(28rem, 100%);
+  padding: clamp(2.5rem, 8vw, 5rem) 0 3rem;
+}
+
+.login-lede {
+  margin-bottom: 2rem;
+}
+
+.login-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.login-actions[hidden],
+.login-setup[hidden],
+.login-status[hidden] {
+  display: none !important;
+}
+
+.oauth-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.95rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.oauth-btn:hover:not(:disabled) {
+  border-color: rgba(235, 230, 218, 0.28);
+  background: rgba(17, 17, 17, 0.88);
+  transform: translateY(-1px);
+}
+
+.oauth-btn:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+.oauth-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.oauth-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex-shrink: 0;
+}
+
+.oauth-x .oauth-icon {
+  color: var(--text);
+}
+
+.login-status {
+  margin: 1.25rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.65);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.login-status[data-tone="error"] {
+  border-color: rgba(232, 120, 110, 0.45);
+  color: #f0b4ae;
+}
+
+.login-status[data-tone="warn"] {
+  border-color: rgba(212, 176, 106, 0.45);
+  color: #e6d0a0;
+}
+
+.login-status[data-tone="ok"] {
+  border-color: rgba(110, 211, 165, 0.4);
+  color: #9be8c6;
+}
+
+.login-setup {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.25rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(10px);
+}
+
+.login-setup h2 {
+  margin: 0 0 0.85rem;
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.login-setup ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #d5d0c3;
+}
+
+.login-setup li + li {
+  margin-top: 0.45rem;
+}
+
+.login-setup code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.82em;
+  color: var(--brass);
+}
+
+.login-setup-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 640px) {
   .site-header {
     align-items: flex-start;
@@ -415,10 +626,28 @@ main {
   .hero h1 {
     font-size: clamp(2.6rem, 14vw, 3.6rem);
   }
+
+  .auth-slot {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .auth-name {
+    max-width: 8rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .oauth-btn {
+    transition: none;
+  }
+
+  .oauth-btn:hover:not(:disabled) {
+    transform: none;
   }
 }
