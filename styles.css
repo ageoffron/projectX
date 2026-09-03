@@ -333,47 +333,6 @@ main {
   font-size: 0.95rem;
 }
 
-.interest-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.interest-grid li {
-  padding: 1.35rem 1.3rem 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(0, 0, 0, 0.58);
-  backdrop-filter: blur(10px);
-}
-
-.interest-meta {
-  margin: 0 0 0.45rem;
-  color: var(--brass);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.interest-grid h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
-}
-
-.interest-grid p:last-child {
-  margin: 0;
-  color: var(--muted);
-}
-
-.contact-lede {
-  margin: 0 0 1.5rem;
-  color: var(--muted);
-}
-
 .contact-list {
   padding: 0;
   margin: 0;
@@ -437,8 +396,7 @@ main {
 
 @media (max-width: 860px) {
   .about-grid,
-  .focus-grid,
-  .interest-grid {
+  .focus-grid {
     grid-template-columns: 1fr;
   }
 }
