@@ -1,0 +1,758 @@
+[
+  {
+    "src": "assets/memories/web/001-107-0744_IMG.jpg",
+    "thumb": "assets/memories/thumbs/001-107-0744_IMG.jpg",
+    "alt": "Memory photo 1",
+    "name": "107-0744_IMG.JPG"
+  },
+  {
+    "src": "assets/memories/web/002-2015-03-28-22.08.36.jpg",
+    "thumb": "assets/memories/thumbs/002-2015-03-28-22.08.36.jpg",
+    "alt": "Memory photo 2",
+    "name": "2015-03-28 22.08.36.jpg"
+  },
+  {
+    "src": "assets/memories/web/003-20180318_111951.jpg",
+    "thumb": "assets/memories/thumbs/003-20180318_111951.jpg",
+    "alt": "Memory photo 3",
+    "name": "20180318_111951.jpg"
+  },
+  {
+    "src": "assets/memories/web/004-4C740C14-02C6-494D-A1DE-E5DE036D4D86.jpg",
+    "thumb": "assets/memories/thumbs/004-4C740C14-02C6-494D-A1DE-E5DE036D4D86.jpg",
+    "alt": "Memory photo 4",
+    "name": "4C740C14-02C6-494D-A1DE-E5DE036D4D86.jpg"
+  },
+  {
+    "src": "assets/memories/web/005-68390648212__1E5D6894-3646-4EAE-98D8-347C91EB920E.jpg",
+    "thumb": "assets/memories/thumbs/005-68390648212__1E5D6894-3646-4EAE-98D8-347C91EB920E.jpg",
+    "alt": "Memory photo 5",
+    "name": "68390648212__1E5D6894-3646-4EAE-98D8-347C91EB920E.JPG"
+  },
+  {
+    "src": "assets/memories/web/006-68877146508__5589BF4D-0FB4-4C83-897C-EE72360D4F9B.jpg",
+    "thumb": "assets/memories/thumbs/006-68877146508__5589BF4D-0FB4-4C83-897C-EE72360D4F9B.jpg",
+    "alt": "Memory photo 6",
+    "name": "68877146508__5589BF4D-0FB4-4C83-897C-EE72360D4F9B.jpeg"
+  },
+  {
+    "src": "assets/memories/web/007-californie_2022.jpg",
+    "thumb": "assets/memories/thumbs/007-californie_2022.jpg",
+    "alt": "Memory photo 7",
+    "name": "californie_2022.jpg"
+  },
+  {
+    "src": "assets/memories/web/008-Camera-Effects-1407525300806.jpg",
+    "thumb": "assets/memories/thumbs/008-Camera-Effects-1407525300806.jpg",
+    "alt": "Memory photo 8",
+    "name": "Camera Effects-1407525300806.jpeg"
+  },
+  {
+    "src": "assets/memories/web/009-FullSizeRender.jpg",
+    "thumb": "assets/memories/thumbs/009-FullSizeRender.jpg",
+    "alt": "Memory photo 9",
+    "name": "FullSizeRender.jpeg"
+  },
+  {
+    "src": "assets/memories/web/010-Gilda.jpg",
+    "thumb": "assets/memories/thumbs/010-Gilda.jpg",
+    "alt": "Memory photo 10",
+    "name": "Gilda.jpeg"
+  },
+  {
+    "src": "assets/memories/web/011-Gilda.jpg",
+    "thumb": "assets/memories/thumbs/011-Gilda.jpg",
+    "alt": "Memory photo 11",
+    "name": "Gilda.JPG"
+  },
+  {
+    "src": "assets/memories/web/012-Gilda.jpg",
+    "thumb": "assets/memories/thumbs/012-Gilda.jpg",
+    "alt": "Memory photo 12",
+    "name": "Gilda.jpg"
+  },
+  {
+    "src": "assets/memories/web/013-IMG-070.jpg",
+    "thumb": "assets/memories/thumbs/013-IMG-070.jpg",
+    "alt": "Memory photo 13",
+    "name": "IMG 070.jpg"
+  },
+  {
+    "src": "assets/memories/web/014-IMG-20260910-WA0003.jpg",
+    "thumb": "assets/memories/thumbs/014-IMG-20260910-WA0003.jpg",
+    "alt": "Memory photo 14",
+    "name": "IMG-20260910-WA0003.jpg"
+  },
+  {
+    "src": "assets/memories/web/015-IMG-20260910-WA0004.jpg",
+    "thumb": "assets/memories/thumbs/015-IMG-20260910-WA0004.jpg",
+    "alt": "Memory photo 15",
+    "name": "IMG-20260910-WA0004.jpg"
+  },
+  {
+    "src": "assets/memories/web/016-IMG_0021.jpg",
+    "thumb": "assets/memories/thumbs/016-IMG_0021.jpg",
+    "alt": "Memory photo 16",
+    "name": "IMG_0021.JPG"
+  },
+  {
+    "src": "assets/memories/web/017-IMG_0043.jpg",
+    "thumb": "assets/memories/thumbs/017-IMG_0043.jpg",
+    "alt": "Memory photo 17",
+    "name": "IMG_0043.JPG"
+  },
+  {
+    "src": "assets/memories/web/018-IMG_0091.jpg",
+    "thumb": "assets/memories/thumbs/018-IMG_0091.jpg",
+    "alt": "Memory photo 18",
+    "name": "IMG_0091.JPG"
+  },
+  {
+    "src": "assets/memories/web/019-IMG_0106.jpg",
+    "thumb": "assets/memories/thumbs/019-IMG_0106.jpg",
+    "alt": "Memory photo 19",
+    "name": "IMG_0106.JPG"
+  },
+  {
+    "src": "assets/memories/web/020-IMG_0124.jpg",
+    "thumb": "assets/memories/thumbs/020-IMG_0124.jpg",
+    "alt": "Memory photo 20",
+    "name": "IMG_0124.HEIC"
+  },
+  {
+    "src": "assets/memories/web/021-IMG_0140.jpg",
+    "thumb": "assets/memories/thumbs/021-IMG_0140.jpg",
+    "alt": "Memory photo 21",
+    "name": "IMG_0140.JPG"
+  },
+  {
+    "src": "assets/memories/web/022-IMG_0147.jpg",
+    "thumb": "assets/memories/thumbs/022-IMG_0147.jpg",
+    "alt": "Memory photo 22",
+    "name": "IMG_0147.JPG"
+  },
+  {
+    "src": "assets/memories/web/023-IMG_0155.jpg",
+    "thumb": "assets/memories/thumbs/023-IMG_0155.jpg",
+    "alt": "Memory photo 23",
+    "name": "IMG_0155.JPG"
+  },
+  {
+    "src": "assets/memories/web/024-IMG_0165.jpg",
+    "thumb": "assets/memories/thumbs/024-IMG_0165.jpg",
+    "alt": "Memory photo 24",
+    "name": "IMG_0165.JPG"
+  },
+  {
+    "src": "assets/memories/web/025-IMG_0225.jpg",
+    "thumb": "assets/memories/thumbs/025-IMG_0225.jpg",
+    "alt": "Memory photo 25",
+    "name": "IMG_0225.JPG"
+  },
+  {
+    "src": "assets/memories/web/026-IMG_0236.jpg",
+    "thumb": "assets/memories/thumbs/026-IMG_0236.jpg",
+    "alt": "Memory photo 26",
+    "name": "IMG_0236.JPG"
+  },
+  {
+    "src": "assets/memories/web/027-IMG_0282.jpg",
+    "thumb": "assets/memories/thumbs/027-IMG_0282.jpg",
+    "alt": "Memory photo 27",
+    "name": "IMG_0282.HEIC"
+  },
+  {
+    "src": "assets/memories/web/028-IMG_0284.jpg",
+    "thumb": "assets/memories/thumbs/028-IMG_0284.jpg",
+    "alt": "Memory photo 28",
+    "name": "IMG_0284.JPG"
+  },
+  {
+    "src": "assets/memories/web/029-IMG_0314.jpg",
+    "thumb": "assets/memories/thumbs/029-IMG_0314.jpg",
+    "alt": "Memory photo 29",
+    "name": "IMG_0314.JPG"
+  },
+  {
+    "src": "assets/memories/web/030-IMG_0320.jpg",
+    "thumb": "assets/memories/thumbs/030-IMG_0320.jpg",
+    "alt": "Memory photo 30",
+    "name": "IMG_0320.HEIC"
+  },
+  {
+    "src": "assets/memories/web/031-IMG_0694.jpg",
+    "thumb": "assets/memories/thumbs/031-IMG_0694.jpg",
+    "alt": "Memory photo 31",
+    "name": "IMG_0694.JPG"
+  },
+  {
+    "src": "assets/memories/web/032-IMG_0762.jpg",
+    "thumb": "assets/memories/thumbs/032-IMG_0762.jpg",
+    "alt": "Memory photo 32",
+    "name": "IMG_0762.JPG"
+  },
+  {
+    "src": "assets/memories/web/033-IMG_0851.jpg",
+    "thumb": "assets/memories/thumbs/033-IMG_0851.jpg",
+    "alt": "Memory photo 33",
+    "name": "IMG_0851.jpeg"
+  },
+  {
+    "src": "assets/memories/web/034-IMG_0963.jpg",
+    "thumb": "assets/memories/thumbs/034-IMG_0963.jpg",
+    "alt": "Memory photo 34",
+    "name": "IMG_0963.jpeg"
+  },
+  {
+    "src": "assets/memories/web/035-IMG_1010.jpg",
+    "thumb": "assets/memories/thumbs/035-IMG_1010.jpg",
+    "alt": "Memory photo 35",
+    "name": "IMG_1010.HEIC"
+  },
+  {
+    "src": "assets/memories/web/036-IMG_1061.jpg",
+    "thumb": "assets/memories/thumbs/036-IMG_1061.jpg",
+    "alt": "Memory photo 36",
+    "name": "IMG_1061.HEIC"
+  },
+  {
+    "src": "assets/memories/web/037-IMG_1325.jpg",
+    "thumb": "assets/memories/thumbs/037-IMG_1325.jpg",
+    "alt": "Memory photo 37",
+    "name": "IMG_1325.heic"
+  },
+  {
+    "src": "assets/memories/web/038-IMG_1584.jpg",
+    "thumb": "assets/memories/thumbs/038-IMG_1584.jpg",
+    "alt": "Memory photo 38",
+    "name": "IMG_1584.heic"
+  },
+  {
+    "src": "assets/memories/web/039-IMG_1647.jpg",
+    "thumb": "assets/memories/thumbs/039-IMG_1647.jpg",
+    "alt": "Memory photo 39",
+    "name": "IMG_1647.JPG"
+  },
+  {
+    "src": "assets/memories/web/040-IMG_1771.jpg",
+    "thumb": "assets/memories/thumbs/040-IMG_1771.jpg",
+    "alt": "Memory photo 40",
+    "name": "IMG_1771.HEIC"
+  },
+  {
+    "src": "assets/memories/web/041-IMG_1928.jpg",
+    "thumb": "assets/memories/thumbs/041-IMG_1928.jpg",
+    "alt": "Memory photo 41",
+    "name": "IMG_1928.JPG"
+  },
+  {
+    "src": "assets/memories/web/042-IMG_20140808_141456.jpg",
+    "thumb": "assets/memories/thumbs/042-IMG_20140808_141456.jpg",
+    "alt": "Memory photo 42",
+    "name": "IMG_20140808_141456.jpg"
+  },
+  {
+    "src": "assets/memories/web/043-IMG_2228.jpg",
+    "thumb": "assets/memories/thumbs/043-IMG_2228.jpg",
+    "alt": "Memory photo 43",
+    "name": "IMG_2228.JPG"
+  },
+  {
+    "src": "assets/memories/web/044-IMG_2261.jpg",
+    "thumb": "assets/memories/thumbs/044-IMG_2261.jpg",
+    "alt": "Memory photo 44",
+    "name": "IMG_2261.heic"
+  },
+  {
+    "src": "assets/memories/web/045-IMG_2265.jpg",
+    "thumb": "assets/memories/thumbs/045-IMG_2265.jpg",
+    "alt": "Memory photo 45",
+    "name": "IMG_2265.HEIC"
+  },
+  {
+    "src": "assets/memories/web/046-IMG_2267.jpg",
+    "thumb": "assets/memories/thumbs/046-IMG_2267.jpg",
+    "alt": "Memory photo 46",
+    "name": "IMG_2267.HEIC"
+  },
+  {
+    "src": "assets/memories/web/047-IMG_2269.jpg",
+    "thumb": "assets/memories/thumbs/047-IMG_2269.jpg",
+    "alt": "Memory photo 47",
+    "name": "IMG_2269.JPG"
+  },
+  {
+    "src": "assets/memories/web/048-IMG_2313.jpg",
+    "thumb": "assets/memories/thumbs/048-IMG_2313.jpg",
+    "alt": "Memory photo 48",
+    "name": "IMG_2313.HEIC"
+  },
+  {
+    "src": "assets/memories/web/049-IMG_2359.jpg",
+    "thumb": "assets/memories/thumbs/049-IMG_2359.jpg",
+    "alt": "Memory photo 49",
+    "name": "IMG_2359.heic"
+  },
+  {
+    "src": "assets/memories/web/050-IMG_2364.jpg",
+    "thumb": "assets/memories/thumbs/050-IMG_2364.jpg",
+    "alt": "Memory photo 50",
+    "name": "IMG_2364.JPG"
+  },
+  {
+    "src": "assets/memories/web/051-IMG_2435.jpg",
+    "thumb": "assets/memories/thumbs/051-IMG_2435.jpg",
+    "alt": "Memory photo 51",
+    "name": "IMG_2435.JPG"
+  },
+  {
+    "src": "assets/memories/web/052-IMG_2548.jpg",
+    "thumb": "assets/memories/thumbs/052-IMG_2548.jpg",
+    "alt": "Memory photo 52",
+    "name": "IMG_2548.JPG"
+  },
+  {
+    "src": "assets/memories/web/053-IMG_2711.jpg",
+    "thumb": "assets/memories/thumbs/053-IMG_2711.jpg",
+    "alt": "Memory photo 53",
+    "name": "IMG_2711.JPG"
+  },
+  {
+    "src": "assets/memories/web/054-IMG_2732.jpg",
+    "thumb": "assets/memories/thumbs/054-IMG_2732.jpg",
+    "alt": "Memory photo 54",
+    "name": "IMG_2732.JPG"
+  },
+  {
+    "src": "assets/memories/web/055-IMG_2875.jpg",
+    "thumb": "assets/memories/thumbs/055-IMG_2875.jpg",
+    "alt": "Memory photo 55",
+    "name": "IMG_2875.HEIC"
+  },
+  {
+    "src": "assets/memories/web/056-IMG_2876.jpg",
+    "thumb": "assets/memories/thumbs/056-IMG_2876.jpg",
+    "alt": "Memory photo 56",
+    "name": "IMG_2876.heic"
+  },
+  {
+    "src": "assets/memories/web/057-IMG_3063.jpg",
+    "thumb": "assets/memories/thumbs/057-IMG_3063.jpg",
+    "alt": "Memory photo 57",
+    "name": "IMG_3063.HEIC"
+  },
+  {
+    "src": "assets/memories/web/058-IMG_3319.jpg",
+    "thumb": "assets/memories/thumbs/058-IMG_3319.jpg",
+    "alt": "Memory photo 58",
+    "name": "IMG_3319.jpeg"
+  },
+  {
+    "src": "assets/memories/web/059-IMG_3388.jpg",
+    "thumb": "assets/memories/thumbs/059-IMG_3388.jpg",
+    "alt": "Memory photo 59",
+    "name": "IMG_3388.jpeg"
+  },
+  {
+    "src": "assets/memories/web/060-IMG_3391.jpg",
+    "thumb": "assets/memories/thumbs/060-IMG_3391.jpg",
+    "alt": "Memory photo 60",
+    "name": "IMG_3391.jpeg"
+  },
+  {
+    "src": "assets/memories/web/061-IMG_3402.jpg",
+    "thumb": "assets/memories/thumbs/061-IMG_3402.jpg",
+    "alt": "Memory photo 61",
+    "name": "IMG_3402.jpeg"
+  },
+  {
+    "src": "assets/memories/web/062-IMG_3403.jpg",
+    "thumb": "assets/memories/thumbs/062-IMG_3403.jpg",
+    "alt": "Memory photo 62",
+    "name": "IMG_3403.jpeg"
+  },
+  {
+    "src": "assets/memories/web/063-IMG_3693.jpg",
+    "thumb": "assets/memories/thumbs/063-IMG_3693.jpg",
+    "alt": "Memory photo 63",
+    "name": "IMG_3693.jpeg"
+  },
+  {
+    "src": "assets/memories/web/064-IMG_3816.jpg",
+    "thumb": "assets/memories/thumbs/064-IMG_3816.jpg",
+    "alt": "Memory photo 64",
+    "name": "IMG_3816.JPG"
+  },
+  {
+    "src": "assets/memories/web/065-IMG_4072.jpg",
+    "thumb": "assets/memories/thumbs/065-IMG_4072.jpg",
+    "alt": "Memory photo 65",
+    "name": "IMG_4072.JPG"
+  },
+  {
+    "src": "assets/memories/web/066-IMG_4094.jpg",
+    "thumb": "assets/memories/thumbs/066-IMG_4094.jpg",
+    "alt": "Memory photo 66",
+    "name": "IMG_4094.HEIC"
+  },
+  {
+    "src": "assets/memories/web/067-IMG_4168.jpg",
+    "thumb": "assets/memories/thumbs/067-IMG_4168.jpg",
+    "alt": "Memory photo 67",
+    "name": "IMG_4168.JPG"
+  },
+  {
+    "src": "assets/memories/web/068-IMG_4196.jpg",
+    "thumb": "assets/memories/thumbs/068-IMG_4196.jpg",
+    "alt": "Memory photo 68",
+    "name": "IMG_4196.HEIC"
+  },
+  {
+    "src": "assets/memories/web/069-IMG_4199.jpg",
+    "thumb": "assets/memories/thumbs/069-IMG_4199.jpg",
+    "alt": "Memory photo 69",
+    "name": "IMG_4199.HEIC"
+  },
+  {
+    "src": "assets/memories/web/070-IMG_4227.jpg",
+    "thumb": "assets/memories/thumbs/070-IMG_4227.jpg",
+    "alt": "Memory photo 70",
+    "name": "IMG_4227.JPG"
+  },
+  {
+    "src": "assets/memories/web/071-IMG_4251-1.jpg",
+    "thumb": "assets/memories/thumbs/071-IMG_4251-1.jpg",
+    "alt": "Memory photo 71",
+    "name": "IMG_4251 (1).JPG"
+  },
+  {
+    "src": "assets/memories/web/072-IMG_4251.jpg",
+    "thumb": "assets/memories/thumbs/072-IMG_4251.jpg",
+    "alt": "Memory photo 72",
+    "name": "IMG_4251.JPG"
+  },
+  {
+    "src": "assets/memories/web/073-IMG_4261.jpg",
+    "thumb": "assets/memories/thumbs/073-IMG_4261.jpg",
+    "alt": "Memory photo 73",
+    "name": "IMG_4261.JPG"
+  },
+  {
+    "src": "assets/memories/web/074-IMG_4278.jpg",
+    "thumb": "assets/memories/thumbs/074-IMG_4278.jpg",
+    "alt": "Memory photo 74",
+    "name": "IMG_4278.JPG"
+  },
+  {
+    "src": "assets/memories/web/075-IMG_4341.jpg",
+    "thumb": "assets/memories/thumbs/075-IMG_4341.jpg",
+    "alt": "Memory photo 75",
+    "name": "IMG_4341.jpeg"
+  },
+  {
+    "src": "assets/memories/web/076-IMG_4513.jpg",
+    "thumb": "assets/memories/thumbs/076-IMG_4513.jpg",
+    "alt": "Memory photo 76",
+    "name": "IMG_4513.HEIC"
+  },
+  {
+    "src": "assets/memories/web/077-IMG_4569.jpg",
+    "thumb": "assets/memories/thumbs/077-IMG_4569.jpg",
+    "alt": "Memory photo 77",
+    "name": "IMG_4569.PNG"
+  },
+  {
+    "src": "assets/memories/web/078-IMG_4590.jpg",
+    "thumb": "assets/memories/thumbs/078-IMG_4590.jpg",
+    "alt": "Memory photo 78",
+    "name": "IMG_4590.jpeg"
+  },
+  {
+    "src": "assets/memories/web/079-IMG_4828.jpg",
+    "thumb": "assets/memories/thumbs/079-IMG_4828.jpg",
+    "alt": "Memory photo 79",
+    "name": "IMG_4828.jpeg"
+  },
+  {
+    "src": "assets/memories/web/080-IMG_4905.jpg",
+    "thumb": "assets/memories/thumbs/080-IMG_4905.jpg",
+    "alt": "Memory photo 80",
+    "name": "IMG_4905.JPG"
+  },
+  {
+    "src": "assets/memories/web/081-IMG_4919.jpg",
+    "thumb": "assets/memories/thumbs/081-IMG_4919.jpg",
+    "alt": "Memory photo 81",
+    "name": "IMG_4919.HEIC"
+  },
+  {
+    "src": "assets/memories/web/082-IMG_5073.jpg",
+    "thumb": "assets/memories/thumbs/082-IMG_5073.jpg",
+    "alt": "Memory photo 82",
+    "name": "IMG_5073.JPG"
+  },
+  {
+    "src": "assets/memories/web/083-IMG_5117.jpg",
+    "thumb": "assets/memories/thumbs/083-IMG_5117.jpg",
+    "alt": "Memory photo 83",
+    "name": "IMG_5117.PNG"
+  },
+  {
+    "src": "assets/memories/web/084-IMG_5118.jpg",
+    "thumb": "assets/memories/thumbs/084-IMG_5118.jpg",
+    "alt": "Memory photo 84",
+    "name": "IMG_5118.PNG"
+  },
+  {
+    "src": "assets/memories/web/085-IMG_5119.jpg",
+    "thumb": "assets/memories/thumbs/085-IMG_5119.jpg",
+    "alt": "Memory photo 85",
+    "name": "IMG_5119.PNG"
+  },
+  {
+    "src": "assets/memories/web/086-IMG_5120.jpg",
+    "thumb": "assets/memories/thumbs/086-IMG_5120.jpg",
+    "alt": "Memory photo 86",
+    "name": "IMG_5120.PNG"
+  },
+  {
+    "src": "assets/memories/web/087-IMG_5121.jpg",
+    "thumb": "assets/memories/thumbs/087-IMG_5121.jpg",
+    "alt": "Memory photo 87",
+    "name": "IMG_5121.PNG"
+  },
+  {
+    "src": "assets/memories/web/088-IMG_5122.jpg",
+    "thumb": "assets/memories/thumbs/088-IMG_5122.jpg",
+    "alt": "Memory photo 88",
+    "name": "IMG_5122.PNG"
+  },
+  {
+    "src": "assets/memories/web/089-IMG_5144.jpg",
+    "thumb": "assets/memories/thumbs/089-IMG_5144.jpg",
+    "alt": "Memory photo 89",
+    "name": "IMG_5144.jpeg"
+  },
+  {
+    "src": "assets/memories/web/090-IMG_5187.jpg",
+    "thumb": "assets/memories/thumbs/090-IMG_5187.jpg",
+    "alt": "Memory photo 90",
+    "name": "IMG_5187.JPG"
+  },
+  {
+    "src": "assets/memories/web/091-IMG_5232.jpg",
+    "thumb": "assets/memories/thumbs/091-IMG_5232.jpg",
+    "alt": "Memory photo 91",
+    "name": "IMG_5232.jpeg"
+  },
+  {
+    "src": "assets/memories/web/092-IMG_5281.jpg",
+    "thumb": "assets/memories/thumbs/092-IMG_5281.jpg",
+    "alt": "Memory photo 92",
+    "name": "IMG_5281.jpeg"
+  },
+  {
+    "src": "assets/memories/web/093-IMG_5361.jpg",
+    "thumb": "assets/memories/thumbs/093-IMG_5361.jpg",
+    "alt": "Memory photo 93",
+    "name": "IMG_5361.jpeg"
+  },
+  {
+    "src": "assets/memories/web/094-IMG_5488.jpg",
+    "thumb": "assets/memories/thumbs/094-IMG_5488.jpg",
+    "alt": "Memory photo 94",
+    "name": "IMG_5488.jpeg"
+  },
+  {
+    "src": "assets/memories/web/095-IMG_5531.jpg",
+    "thumb": "assets/memories/thumbs/095-IMG_5531.jpg",
+    "alt": "Memory photo 95",
+    "name": "IMG_5531.jpeg"
+  },
+  {
+    "src": "assets/memories/web/096-IMG_5583.jpg",
+    "thumb": "assets/memories/thumbs/096-IMG_5583.jpg",
+    "alt": "Memory photo 96",
+    "name": "IMG_5583.jpeg"
+  },
+  {
+    "src": "assets/memories/web/097-IMG_6170.jpg",
+    "thumb": "assets/memories/thumbs/097-IMG_6170.jpg",
+    "alt": "Memory photo 97",
+    "name": "IMG_6170.HEIC"
+  },
+  {
+    "src": "assets/memories/web/098-IMG_6389.jpg",
+    "thumb": "assets/memories/thumbs/098-IMG_6389.jpg",
+    "alt": "Memory photo 98",
+    "name": "IMG_6389.HEIC"
+  },
+  {
+    "src": "assets/memories/web/099-IMG_6390.jpg",
+    "thumb": "assets/memories/thumbs/099-IMG_6390.jpg",
+    "alt": "Memory photo 99",
+    "name": "IMG_6390.HEIC"
+  },
+  {
+    "src": "assets/memories/web/100-IMG_6740.jpg",
+    "thumb": "assets/memories/thumbs/100-IMG_6740.jpg",
+    "alt": "Memory photo 100",
+    "name": "IMG_6740.jpeg"
+  },
+  {
+    "src": "assets/memories/web/101-IMG_7157.jpg",
+    "thumb": "assets/memories/thumbs/101-IMG_7157.jpg",
+    "alt": "Memory photo 101",
+    "name": "IMG_7157.HEIC"
+  },
+  {
+    "src": "assets/memories/web/102-IMG_7200.jpg",
+    "thumb": "assets/memories/thumbs/102-IMG_7200.jpg",
+    "alt": "Memory photo 102",
+    "name": "IMG_7200.HEIC"
+  },
+  {
+    "src": "assets/memories/web/103-IMG_7389.jpg",
+    "thumb": "assets/memories/thumbs/103-IMG_7389.jpg",
+    "alt": "Memory photo 103",
+    "name": "IMG_7389.HEIC"
+  },
+  {
+    "src": "assets/memories/web/104-IMG_7678.jpg",
+    "thumb": "assets/memories/thumbs/104-IMG_7678.jpg",
+    "alt": "Memory photo 104",
+    "name": "IMG_7678.jpeg"
+  },
+  {
+    "src": "assets/memories/web/105-IMG_7807.jpg",
+    "thumb": "assets/memories/thumbs/105-IMG_7807.jpg",
+    "alt": "Memory photo 105",
+    "name": "IMG_7807.jpeg"
+  },
+  {
+    "src": "assets/memories/web/106-IMG_7839.jpg",
+    "thumb": "assets/memories/thumbs/106-IMG_7839.jpg",
+    "alt": "Memory photo 106",
+    "name": "IMG_7839.jpeg"
+  },
+  {
+    "src": "assets/memories/web/107-IMG_8359.jpg",
+    "thumb": "assets/memories/thumbs/107-IMG_8359.jpg",
+    "alt": "Memory photo 107",
+    "name": "IMG_8359.JPG"
+  },
+  {
+    "src": "assets/memories/web/108-IMG_8590.jpg",
+    "thumb": "assets/memories/thumbs/108-IMG_8590.jpg",
+    "alt": "Memory photo 108",
+    "name": "IMG_8590.JPG"
+  },
+  {
+    "src": "assets/memories/web/109-IMG_9100.jpg",
+    "thumb": "assets/memories/thumbs/109-IMG_9100.jpg",
+    "alt": "Memory photo 109",
+    "name": "IMG_9100.JPG"
+  },
+  {
+    "src": "assets/memories/web/110-IMG_9239.jpg",
+    "thumb": "assets/memories/thumbs/110-IMG_9239.jpg",
+    "alt": "Memory photo 110",
+    "name": "IMG_9239.jpeg"
+  },
+  {
+    "src": "assets/memories/web/111-IMG_9253.jpg",
+    "thumb": "assets/memories/thumbs/111-IMG_9253.jpg",
+    "alt": "Memory photo 111",
+    "name": "IMG_9253.jpeg"
+  },
+  {
+    "src": "assets/memories/web/112-IMG_9393.jpg",
+    "thumb": "assets/memories/thumbs/112-IMG_9393.jpg",
+    "alt": "Memory photo 112",
+    "name": "IMG_9393.jpeg"
+  },
+  {
+    "src": "assets/memories/web/113-IMG_9402.jpg",
+    "thumb": "assets/memories/thumbs/113-IMG_9402.jpg",
+    "alt": "Memory photo 113",
+    "name": "IMG_9402.jpeg"
+  },
+  {
+    "src": "assets/memories/web/114-IMG_9428.jpg",
+    "thumb": "assets/memories/thumbs/114-IMG_9428.jpg",
+    "alt": "Memory photo 114",
+    "name": "IMG_9428.jpeg"
+  },
+  {
+    "src": "assets/memories/web/115-IMG_9493.jpg",
+    "thumb": "assets/memories/thumbs/115-IMG_9493.jpg",
+    "alt": "Memory photo 115",
+    "name": "IMG_9493.jpeg"
+  },
+  {
+    "src": "assets/memories/web/116-IMG_9531.jpg",
+    "thumb": "assets/memories/thumbs/116-IMG_9531.jpg",
+    "alt": "Memory photo 116",
+    "name": "IMG_9531.jpeg"
+  },
+  {
+    "src": "assets/memories/web/117-IMG_9540.jpg",
+    "thumb": "assets/memories/thumbs/117-IMG_9540.jpg",
+    "alt": "Memory photo 117",
+    "name": "IMG_9540.jpeg"
+  },
+  {
+    "src": "assets/memories/web/118-IMG_9867.jpg",
+    "thumb": "assets/memories/thumbs/118-IMG_9867.jpg",
+    "alt": "Memory photo 118",
+    "name": "IMG_9867.jpeg"
+  },
+  {
+    "src": "assets/memories/web/119-IMG_9998.jpg",
+    "thumb": "assets/memories/thumbs/119-IMG_9998.jpg",
+    "alt": "Memory photo 119",
+    "name": "IMG_9998.HEIC"
+  },
+  {
+    "src": "assets/memories/web/120-Linda-Kasian-Photography-7254.jpg",
+    "thumb": "assets/memories/thumbs/120-Linda-Kasian-Photography-7254.jpg",
+    "alt": "Memory photo 120",
+    "name": "Linda Kasian Photography-7254.jpg"
+  },
+  {
+    "src": "assets/memories/web/121-Linda-Kasian-Photography-7335.jpg",
+    "thumb": "assets/memories/thumbs/121-Linda-Kasian-Photography-7335.jpg",
+    "alt": "Memory photo 121",
+    "name": "Linda Kasian Photography-7335.jpg"
+  },
+  {
+    "src": "assets/memories/web/122-Night-Out-002.jpg",
+    "thumb": "assets/memories/thumbs/122-Night-Out-002.jpg",
+    "alt": "Memory photo 122",
+    "name": "Night Out 002.jpg"
+  },
+  {
+    "src": "assets/memories/web/123-PXL_20230930_030251071.jpg",
+    "thumb": "assets/memories/thumbs/123-PXL_20230930_030251071.jpg",
+    "alt": "Memory photo 123",
+    "name": "PXL_20230930_030251071.jpg"
+  },
+  {
+    "src": "assets/memories/web/124-PXL_20240914_182028094.jpg",
+    "thumb": "assets/memories/thumbs/124-PXL_20240914_182028094.jpg",
+    "alt": "Memory photo 124",
+    "name": "PXL_20240914_182028094.jpg"
+  },
+  {
+    "src": "assets/memories/web/125-PXL_20250929_194959293.jpg",
+    "thumb": "assets/memories/thumbs/125-PXL_20250929_194959293.jpg",
+    "alt": "Memory photo 125",
+    "name": "PXL_20250929_194959293.jpg"
+  },
+  {
+    "src": "assets/memories/web/126-Screenshot_20260817_152522_Messages.jpg",
+    "thumb": "assets/memories/thumbs/126-Screenshot_20260817_152522_Messages.jpg",
+    "alt": "Memory photo 126",
+    "name": "Screenshot_20260817_152522_Messages.jpg"
+  }
+]
