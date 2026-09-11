@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
   </head>
   <body>
     <div id="scene" aria-hidden="true">
@@ -51,6 +51,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
+        <a href="#memories">Memories</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -128,9 +129,67 @@
         </ul>
       </section>
 
-      <section class="section contact" id="contact">
+      <section class="section memories" id="memories">
         <div class="section-label">
           <span class="idx">03</span>
+          <h2>Memories</h2>
+        </div>
+        <p class="section-intro">
+          Photos and video gathered for Gilda’s Celebration of Life — shown back to back,
+          with a downloadable slideshow for editing in iMovie.
+        </p>
+
+        <div class="media-stack">
+          <figure class="video-block">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/memories/thumbs/001-107-0744_IMG.jpg"
+            >
+              <source
+                src="assets/memories/videos/gilda-memories-slideshow.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <figcaption>
+              <span>Slideshow · 126 photos · ~5 min</span>
+              <a
+                class="download-link"
+                href="assets/memories/videos/gilda-memories-slideshow.mp4"
+                download="gilda-memories-slideshow.mp4"
+              >Download for iMovie</a>
+            </figcaption>
+          </figure>
+
+          <figure class="video-block">
+            <video controls playsinline preload="metadata">
+              <source src="assets/memories/videos/gilda-clip-1.mp4" type="video/mp4" />
+            </video>
+            <figcaption><span>Video clip</span></figcaption>
+          </figure>
+
+          <figure class="video-block">
+            <video controls playsinline preload="metadata">
+              <source src="assets/memories/videos/gilda-clip-2.mp4" type="video/mp4" />
+            </video>
+            <figcaption><span>Video clip</span></figcaption>
+          </figure>
+
+          <figure class="video-block">
+            <video controls playsinline preload="metadata">
+              <source src="assets/memories/videos/gilda-clip-3.mp4" type="video/mp4" />
+            </video>
+            <figcaption><span>Video clip</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="photo-rail" id="memory-photos" aria-label="Photo gallery"></div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-label">
+          <span class="idx">04</span>
           <h2>Contact</h2>
         </div>
         <ul class="contact-list">
@@ -151,5 +210,6 @@
       <p class="fine">GitHub Pages</p>
     </footer>
     <script src="cube.js?v=5"></script>
+    <script src="memories.js?v=1"></script>
   </body>
 </html>
