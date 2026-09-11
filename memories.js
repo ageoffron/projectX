@@ -12,25 +12,9 @@
   const unlockError = document.getElementById("memories-unlock-error");
   const rail = document.getElementById("memory-photos");
 
-  const slideImage = document.getElementById("slideshow-image");
-  const slideStatus = document.getElementById("slideshow-status");
-  const slideCounter = document.getElementById("slideshow-counter");
-  const playBtn = document.getElementById("slideshow-play");
-  const prevBtn = document.getElementById("slideshow-prev");
-  const nextBtn = document.getElementById("slideshow-next");
-  const delayInput = document.getElementById("slideshow-delay");
-  const delayValue = document.getElementById("slideshow-delay-value");
-  const audioInput = document.getElementById("slideshow-audio-file");
-  const audioEl = document.getElementById("slideshow-audio");
-
   if (!gate || !content || !form || !rail) return;
 
-  let photos = [];
-  let index = 0;
-  let playing = false;
-  let timer = null;
   let mediaReady = false;
-  let audioObjectUrl = null;
 
   async function sha256Hex(text) {
     const data = new TextEncoder().encode(text);
@@ -71,59 +55,6 @@
     setUnlocked(false);
   }
 
-  function delayMs() {
-    return Math.max(0.5, Number(delayInput.value) || 2.5) * 1000;
-  }
-
-  function updateDelayLabel() {
-    delayValue.textContent = `${Number(delayInput.value).toFixed(1)}s`;
-  }
-
-  function showSlide(i) {
-    if (!photos.length) return;
-    index = (i + photos.length) % photos.length;
-    const photo = photos[index];
-    slideImage.src = photo.src;
-    slideImage.alt = photo.alt || `Memory photo ${index + 1}`;
-    slideCounter.textContent = `${index + 1} / ${photos.length}`;
-    slideStatus.hidden = true;
-  }
-
-  function stopSlideshow() {
-    playing = false;
-    playBtn.textContent = "Play";
-    if (timer) {
-      clearTimeout(timer);
-      timer = null;
-    }
-    if (audioEl && !audioEl.paused) {
-      audioEl.pause();
-    }
-  }
-
-  function scheduleNext() {
-    if (!playing) return;
-    timer = setTimeout(() => {
-      showSlide(index + 1);
-      scheduleNext();
-    }, delayMs());
-  }
-
-  function startSlideshow() {
-    if (!photos.length) return;
-    playing = true;
-    playBtn.textContent = "Pause";
-    if (audioEl && audioEl.src) {
-      audioEl.play().catch(() => {});
-    }
-    scheduleNext();
-  }
-
-  function togglePlay() {
-    if (playing) stopSlideshow();
-    else startSlideshow();
-  }
-
   function buildLightbox() {
     const dialog = document.createElement("dialog");
     dialog.className = "lightbox";
@@ -151,7 +82,7 @@
     return { dialog, lightImg };
   }
 
-  function renderGallery(lightbox) {
+  function renderGallery(photos, lightbox) {
     rail.innerHTML = "";
     const frag = document.createDocumentFragment();
     photos.forEach((photo, i) => {
@@ -191,70 +122,17 @@
         return res.json();
       })
       .then((list) => {
-        photos = Array.isArray(list) ? list : [];
+        const photos = Array.isArray(list) ? list : [];
         if (!photos.length) {
-          slideStatus.textContent = "No photos found.";
           rail.innerHTML =
             '<p class="gallery-fallback">Photos could not be loaded.</p>';
           return;
         }
-        showSlide(0);
-        renderGallery(lightbox);
+        renderGallery(photos, lightbox);
       })
       .catch(() => {
-        slideStatus.textContent = "Photos could not be loaded.";
         rail.innerHTML =
           '<p class="gallery-fallback">Photos could not be loaded.</p>';
       });
-
-    updateDelayLabel();
-    delayInput.addEventListener("input", () => {
-      updateDelayLabel();
-      if (playing) {
-        clearTimeout(timer);
-        scheduleNext();
-      }
-    });
-
-    playBtn.addEventListener("click", togglePlay);
-    prevBtn.addEventListener("click", () => {
-      showSlide(index - 1);
-      if (playing) {
-        clearTimeout(timer);
-        scheduleNext();
-      }
-    });
-    nextBtn.addEventListener("click", () => {
-      showSlide(index + 1);
-      if (playing) {
-        clearTimeout(timer);
-        scheduleNext();
-      }
-    });
-
-    audioInput.addEventListener("change", () => {
-      const file = audioInput.files && audioInput.files[0];
-      if (audioObjectUrl) {
-        URL.revokeObjectURL(audioObjectUrl);
-        audioObjectUrl = null;
-      }
-      if (!file) {
-        audioEl.removeAttribute("src");
-        audioEl.hidden = true;
-        audioEl.load();
-        return;
-      }
-      audioObjectUrl = URL.createObjectURL(file);
-      audioEl.src = audioObjectUrl;
-      audioEl.hidden = false;
-      audioEl.load();
-      if (playing) {
-        audioEl.play().catch(() => {});
-      }
-    });
-
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden && playing) stopSlideshow();
-    });
   }
 })();

@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="styles.css?v=9" />
   </head>
   <body>
     <div id="scene" aria-hidden="true">
@@ -138,7 +138,7 @@
         <div id="memories-gate" class="memories-gate">
           <p class="section-intro">
             This section is private. Enter the shared password to view photos, videos,
-            and the slideshow.
+            and the gallery.
           </p>
           <form id="memories-unlock-form" class="memories-unlock" autocomplete="current-password">
             <label for="memories-password">Password</label>
@@ -161,55 +161,9 @@
 
         <div id="memories-content" class="memories-content" hidden>
           <p class="section-intro">
-            Photos and video for Gilda’s Celebration of Life. Set the photo delay and
-            optional music in the live slideshow, or download the MP4 for iMovie.
+            Photos and video for Gilda’s Celebration of Life — shown back to back,
+            with a downloadable slideshow for editing in iMovie.
           </p>
-
-          <div class="slideshow-panel">
-            <div class="slideshow-stage">
-              <img
-                id="slideshow-image"
-                class="slideshow-image"
-                alt="Slideshow photo"
-                decoding="async"
-              />
-              <p id="slideshow-status" class="slideshow-status">Loading photos…</p>
-            </div>
-            <div class="slideshow-controls">
-              <div class="slideshow-buttons">
-                <button type="button" id="slideshow-prev">Prev</button>
-                <button type="button" id="slideshow-play">Play</button>
-                <button type="button" id="slideshow-next">Next</button>
-              </div>
-              <label class="delay-control" for="slideshow-delay">
-                <span>Seconds per photo</span>
-                <input
-                  id="slideshow-delay"
-                  type="range"
-                  min="1"
-                  max="15"
-                  step="0.5"
-                  value="2.5"
-                />
-                <output id="slideshow-delay-value" for="slideshow-delay">2.5s</output>
-              </label>
-              <label class="audio-control" for="slideshow-audio-file">
-                <span>Audio (optional)</span>
-                <input
-                  id="slideshow-audio-file"
-                  type="file"
-                  accept="audio/*,.mp3,.m4a,.aac,.wav,.ogg"
-                />
-              </label>
-              <p class="audio-hint">
-                Pick a music file from your device to play with the slideshow.
-                For iMovie, add the soundtrack there after downloading the MP4 —
-                or ask to bake music into a new export.
-              </p>
-              <audio id="slideshow-audio" preload="metadata" controls class="slideshow-audio" hidden></audio>
-              <p id="slideshow-counter" class="slideshow-counter">0 / 0</p>
-            </div>
-          </div>
 
           <div class="media-stack">
             <figure class="video-block">
@@ -283,6 +237,6 @@
       <p class="fine">GitHub Pages</p>
     </footer>
     <script src="cube.js?v=5"></script>
-    <script src="memories.js?v=3"></script>
+    <script src="memories.js?v=4"></script>
   </body>
 </html>
