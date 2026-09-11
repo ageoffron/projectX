@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <div id="scene" aria-hidden="true">
@@ -134,57 +134,130 @@
           <span class="idx">03</span>
           <h2>Memories</h2>
         </div>
-        <p class="section-intro">
-          Photos and video gathered for Gilda’s Celebration of Life — shown back to back,
-          with a downloadable slideshow for editing in iMovie.
-        </p>
 
-        <div class="media-stack">
-          <figure class="video-block">
-            <video
-              controls
-              playsinline
-              preload="metadata"
-              poster="assets/memories/thumbs/001-107-0744_IMG.jpg"
-            >
-              <source
-                src="assets/memories/videos/gilda-memories-slideshow.mp4"
-                type="video/mp4"
+        <div id="memories-gate" class="memories-gate">
+          <p class="section-intro">
+            This section is private. Enter the shared password to view photos, videos,
+            and the slideshow.
+          </p>
+          <form id="memories-unlock-form" class="memories-unlock" autocomplete="current-password">
+            <label for="memories-password">Password</label>
+            <div class="memories-unlock-row">
+              <input
+                id="memories-password"
+                name="password"
+                type="password"
+                required
+                autocomplete="current-password"
+                placeholder="Enter password"
               />
-            </video>
-            <figcaption>
-              <span>Slideshow · 126 photos · ~5 min</span>
-              <a
-                class="download-link"
-                href="assets/memories/videos/gilda-memories-slideshow.mp4"
-                download="gilda-memories-slideshow.mp4"
-              >Download for iMovie</a>
-            </figcaption>
-          </figure>
-
-          <figure class="video-block">
-            <video controls playsinline preload="metadata">
-              <source src="assets/memories/videos/gilda-clip-1.mp4" type="video/mp4" />
-            </video>
-            <figcaption><span>Video clip</span></figcaption>
-          </figure>
-
-          <figure class="video-block">
-            <video controls playsinline preload="metadata">
-              <source src="assets/memories/videos/gilda-clip-2.mp4" type="video/mp4" />
-            </video>
-            <figcaption><span>Video clip</span></figcaption>
-          </figure>
-
-          <figure class="video-block">
-            <video controls playsinline preload="metadata">
-              <source src="assets/memories/videos/gilda-clip-3.mp4" type="video/mp4" />
-            </video>
-            <figcaption><span>Video clip</span></figcaption>
-          </figure>
+              <button type="submit">Unlock</button>
+            </div>
+            <p id="memories-unlock-error" class="memories-unlock-error" hidden>
+              Incorrect password. Try again.
+            </p>
+          </form>
         </div>
 
-        <div class="photo-rail" id="memory-photos" aria-label="Photo gallery"></div>
+        <div id="memories-content" class="memories-content" hidden>
+          <p class="section-intro">
+            Photos and video for Gilda’s Celebration of Life. Set the photo delay and
+            optional music in the live slideshow, or download the MP4 for iMovie.
+          </p>
+
+          <div class="slideshow-panel">
+            <div class="slideshow-stage">
+              <img
+                id="slideshow-image"
+                class="slideshow-image"
+                alt="Slideshow photo"
+                decoding="async"
+              />
+              <p id="slideshow-status" class="slideshow-status">Loading photos…</p>
+            </div>
+            <div class="slideshow-controls">
+              <div class="slideshow-buttons">
+                <button type="button" id="slideshow-prev">Prev</button>
+                <button type="button" id="slideshow-play">Play</button>
+                <button type="button" id="slideshow-next">Next</button>
+              </div>
+              <label class="delay-control" for="slideshow-delay">
+                <span>Seconds per photo</span>
+                <input
+                  id="slideshow-delay"
+                  type="range"
+                  min="1"
+                  max="15"
+                  step="0.5"
+                  value="2.5"
+                />
+                <output id="slideshow-delay-value" for="slideshow-delay">2.5s</output>
+              </label>
+              <label class="audio-control" for="slideshow-audio-file">
+                <span>Audio (optional)</span>
+                <input
+                  id="slideshow-audio-file"
+                  type="file"
+                  accept="audio/*,.mp3,.m4a,.aac,.wav,.ogg"
+                />
+              </label>
+              <p class="audio-hint">
+                Pick a music file from your device to play with the slideshow.
+                For iMovie, add the soundtrack there after downloading the MP4 —
+                or ask to bake music into a new export.
+              </p>
+              <audio id="slideshow-audio" preload="metadata" controls class="slideshow-audio" hidden></audio>
+              <p id="slideshow-counter" class="slideshow-counter">0 / 0</p>
+            </div>
+          </div>
+
+          <div class="media-stack">
+            <figure class="video-block">
+              <video
+                controls
+                playsinline
+                preload="none"
+                poster="assets/memories/thumbs/001-107-0744_IMG.jpg"
+              >
+                <source
+                  src="assets/memories/videos/gilda-memories-slideshow.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <figcaption>
+                <span>Pre-rendered slideshow · 126 photos · ~5 min</span>
+                <a
+                  class="download-link"
+                  href="assets/memories/videos/gilda-memories-slideshow.mp4"
+                  download="gilda-memories-slideshow.mp4"
+                >Download for iMovie</a>
+              </figcaption>
+            </figure>
+
+            <figure class="video-block">
+              <video controls playsinline preload="none">
+                <source src="assets/memories/videos/gilda-clip-1.mp4" type="video/mp4" />
+              </video>
+              <figcaption><span>Video clip</span></figcaption>
+            </figure>
+
+            <figure class="video-block">
+              <video controls playsinline preload="none">
+                <source src="assets/memories/videos/gilda-clip-2.mp4" type="video/mp4" />
+              </video>
+              <figcaption><span>Video clip</span></figcaption>
+            </figure>
+
+            <figure class="video-block">
+              <video controls playsinline preload="none">
+                <source src="assets/memories/videos/gilda-clip-3.mp4" type="video/mp4" />
+              </video>
+              <figcaption><span>Video clip</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="photo-rail" id="memory-photos" aria-label="Photo gallery"></div>
+        </div>
       </section>
 
       <section class="section contact" id="contact">
@@ -210,6 +283,6 @@
       <p class="fine">GitHub Pages</p>
     </footer>
     <script src="cube.js?v=5"></script>
-    <script src="memories.js?v=1"></script>
+    <script src="memories.js?v=3"></script>
   </body>
 </html>
