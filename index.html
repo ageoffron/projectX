@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body>
     <div id="scene" aria-hidden="true">
@@ -137,8 +137,8 @@
 
         <div id="memories-gate" class="memories-gate">
           <p class="section-intro">
-            This section is private. Enter the shared password to view photos, videos,
-            and the gallery.
+            This section is private. Enter the shared password to view the picture gallery
+            and compiled videos.
           </p>
           <form id="memories-unlock-form" class="memories-unlock" autocomplete="current-password">
             <label for="memories-password">Password</label>
@@ -159,58 +159,56 @@
           </form>
         </div>
 
-        <div id="memories-content" class="memories-content" hidden>
+              <div id="memories-content" class="memories-content" hidden>
           <p class="section-intro">
-            Photos and video for Gilda’s Celebration of Life — shown back to back,
-            with a downloadable slideshow for editing in iMovie.
+            Refreshed from Google Drive. Browse the photo gallery, watch the compiled
+            videos, and download either package for editing in iMovie.
           </p>
 
-          <div class="media-stack">
+          <div class="memories-block">
+            <div class="memories-block-head">
+              <h3>Pictures</h3>
+              <a
+                class="download-link"
+                href="assets/memories/videos/gilda-photos-slideshow.mp4"
+                download="gilda-photos-slideshow.mp4"
+              >Download pictures for iMovie</a>
+            </div>
+            <p class="memories-block-note">
+              231 photos · slideshow export ~9.5 min (2.5s per photo)
+            </p>
+            <div class="photo-rail" id="memory-photos" aria-label="Photo gallery"></div>
+          </div>
+
+          <div class="memories-block">
+            <div class="memories-block-head">
+              <h3>Videos</h3>
+              <a
+                class="download-link"
+                href="assets/memories/videos/gilda-videos-compilation.mp4"
+                download="gilda-videos-compilation.mp4"
+              >Download videos for iMovie</a>
+            </div>
+            <p class="memories-block-note">
+              10 clips stitched with fade-to-black between each · ~4.3 min
+            </p>
             <figure class="video-block">
               <video
                 controls
                 playsinline
-                preload="none"
+                preload="metadata"
                 poster="assets/memories/thumbs/001-107-0744_IMG.jpg"
               >
                 <source
-                  src="assets/memories/videos/gilda-memories-slideshow.mp4"
+                  src="assets/memories/videos/gilda-videos-compilation.mp4"
                   type="video/mp4"
                 />
               </video>
               <figcaption>
-                <span>Pre-rendered slideshow · 126 photos · ~5 min</span>
-                <a
-                  class="download-link"
-                  href="assets/memories/videos/gilda-memories-slideshow.mp4"
-                  download="gilda-memories-slideshow.mp4"
-                >Download for iMovie</a>
+                <span>All Drive videos · fade to black between clips</span>
               </figcaption>
             </figure>
-
-            <figure class="video-block">
-              <video controls playsinline preload="none">
-                <source src="assets/memories/videos/gilda-clip-1.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span>Video clip</span></figcaption>
-            </figure>
-
-            <figure class="video-block">
-              <video controls playsinline preload="none">
-                <source src="assets/memories/videos/gilda-clip-2.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span>Video clip</span></figcaption>
-            </figure>
-
-            <figure class="video-block">
-              <video controls playsinline preload="none">
-                <source src="assets/memories/videos/gilda-clip-3.mp4" type="video/mp4" />
-              </video>
-              <figcaption><span>Video clip</span></figcaption>
-            </figure>
           </div>
-
-          <div class="photo-rail" id="memory-photos" aria-label="Photo gallery"></div>
         </div>
       </section>
 
@@ -237,6 +235,6 @@
       <p class="fine">GitHub Pages</p>
     </footer>
     <script src="cube.js?v=5"></script>
-    <script src="memories.js?v=4"></script>
+    <script src="memories.js?v=5"></script>
   </body>
 </html>
