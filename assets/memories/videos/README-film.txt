@@ -1,13 +1,11 @@
 Gilda Memories — Film download for iMovie
 =========================================
 
-File: gilda-film-1s-per-photo.mp4
+File: gilda-film-2s-per-photo.mp4
 
-- 239 photos, 1 second each (~3:59)
+- 239 photos, 2 seconds each (~7:58)
 - Silent (no soundtrack) — add music in iMovie
-- Native photo size: each still is pasted at its original
-  pixel dimensions (no scaling). Smaller photos are centered
-  on a 1400×1400 black canvas.
+- Photos centered on a 1400×1400 canvas (no scaling)
 
 In iMovie:
 1. Download the film MP4
