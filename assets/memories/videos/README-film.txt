@@ -14,5 +14,5 @@ In iMovie:
 3. Drag it onto the timeline as one clip
 4. Edit further if you want (trim, titles, extra audio)
 
-Photos stay letterboxed on a black 1920×1080 canvas.
+Photos are letterboxed on a black 1920×1080 canvas.
 Music loops on the longer films when the track ends.
