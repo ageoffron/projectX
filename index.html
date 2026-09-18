@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=14" />
+    <link rel="stylesheet" href="styles.css?v=15" />
   </head>
   <body>
     <div id="scene" aria-hidden="true">
@@ -51,7 +51,6 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
-        <a href="#memories">Memories</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -129,89 +128,9 @@
         </ul>
       </section>
 
-      <section class="section memories" id="memories">
-        <div class="section-label">
-          <span class="idx">03</span>
-          <h2>Memories</h2>
-        </div>
-
-        <div id="memories-gate" class="memories-gate">
-          <p class="section-intro">
-            This section is private. Enter the shared password to view the picture gallery.
-          </p>
-          <form id="memories-unlock-form" class="memories-unlock" autocomplete="current-password">
-            <label for="memories-password">Password</label>
-            <div class="memories-unlock-row">
-              <input
-                id="memories-password"
-                name="password"
-                type="password"
-                required
-                autocomplete="current-password"
-                placeholder="Enter password"
-              />
-              <button type="submit">Unlock</button>
-            </div>
-            <p id="memories-unlock-error" class="memories-unlock-error" hidden>
-              Incorrect password. Try again.
-            </p>
-          </form>
-        </div>
-
-        <div id="memories-content" class="memories-content" hidden>
-          <p class="section-intro">
-            Photos refreshed from Google Drive. Browse the gallery, download a ready-made
-            silent film for iMovie, or grab the photo ZIP and music to edit yourself.
-          </p>
-
-          <div class="memories-block">
-            <div class="memories-block-head">
-              <h3>Film</h3>
-              <a
-                class="download-link"
-                href="assets/memories/videos/gilda-film-2s-per-photo.mp4"
-                download="gilda-film-2s-per-photo.mp4"
-              >Download film · 2s per photo (~8:00)</a>
-            </div>
-            <p class="memories-block-note">
-              Silent MP4 · 239 photos · 2s each · add music in iMovie
-            </p>
-          </div>
-
-          <div class="memories-block">
-            <div class="memories-block-head">
-              <h3>Pictures</h3>
-              <a
-                class="download-link"
-                href="assets/memories/downloads/gilda-photos-for-imovie.zip"
-                download="gilda-photos-for-imovie.zip"
-              >Download photos for iMovie (.zip)</a>
-            </div>
-            <p class="memories-block-note">
-              239 photos · ZIP of individual JPEGs (import into iMovie to set timing & transitions)
-            </p>
-            <div class="photo-rail" id="memory-photos" aria-label="Photo gallery"></div>
-          </div>
-
-          <div class="memories-block">
-            <div class="memories-block-head">
-              <h3>Music</h3>
-              <a
-                class="download-link"
-                href="assets/memories/downloads/gilda-slideshow-music.mp3"
-                download="gilda-slideshow-music.mp3"
-              >Download slideshow music (.mp3)</a>
-            </div>
-            <p class="memories-block-note">
-              Coldplay — Magic · ~4:45 · 128 kbps · import in iMovie under the film clip
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section class="section contact" id="contact">
         <div class="section-label">
-          <span class="idx">04</span>
+          <span class="idx">03</span>
           <h2>Contact</h2>
         </div>
         <ul class="contact-list">
@@ -232,6 +151,5 @@
       <p class="fine">GitHub Pages</p>
     </footer>
     <script src="cube.js?v=5"></script>
-    <script src="memories.js?v=9"></script>
   </body>
 </html>
