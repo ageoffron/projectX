@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Boiling Water: Pressure, Altitude &amp; the Open vs. Closed Container — Anthony Geoffron</title>
+<meta name="description" content="An interactive presentation on the physics of boiling water: states of matter, heating curves, latent heat, pressure and altitude." />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+<style>
+:root{--bg:#000;--elev:#0a0a0a;--elev2:#111;--line:rgba(235,230,218,.12);--text:#ebe6da;--muted:#9b9688;--accent:#6ed3a5;--brass:#d4b06a;--heat:#e8875a;--max:72rem;--gutter:clamp(1.25rem,4vw,2.5rem)}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:"Figtree","Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.6}
+body{overflow:hidden;background:radial-gradient(60rem 40rem at 80% -10%,rgba(110,211,165,.08),transparent 60%),radial-gradient(50rem 40rem at -10% 110%,rgba(212,176,106,.07),transparent 60%),#000}
+a{color:var(--accent)}
+.mono{font-family:"IBM Plex Mono",monospace}
+header.bar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem var(--gutter);border-bottom:1px solid var(--line);background:rgba(0,0,0,.6);backdrop-filter:blur(12px)}
+.back{font-family:"IBM Plex Mono",monospace;font-size:.8rem;text-decoration:none;color:var(--muted);letter-spacing:.04em}
+.back:hover{color:var(--accent)}
+.counter{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--brass)}
+.progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--brass));z-index:11;transition:width .4s ease}
+.deck{position:relative;height:100%}
+.slide{position:absolute;inset:0;padding:5.5rem var(--gutter) 6rem;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease,visibility .5s}
+.slide.active{opacity:1;visibility:visible;transform:none}
+.inner{max-width:var(--max);margin:0 auto;min-height:100%;display:flex;flex-direction:column;justify-content:center}
+.label{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.label .idx{color:var(--brass);margin-right:.6rem}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.12;margin:0 0 1rem}
+h1{font-size:clamp(2.2rem,6vw,4.4rem)}
+h1 em,h2 em{color:var(--accent);font-style:italic}
+h2{font-size:clamp(1.8rem,4vw,2.9rem)}
+h3{font-size:1.25rem}
+p{color:#d6d1c4;max-width:44rem}
+.muted{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.card{border:1px solid var(--line);border-radius:14px;padding:1.3rem;background:rgba(17,17,17,.6);backdrop-filter:blur(10px)}
+.card h3{color:var(--brass)}
+.pill{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.75rem;padding:.2rem .6rem;border:1px solid var(--line);border-radius:999px;color:var(--accent)}
+.hero-hint{margin-top:2rem;font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--muted)}
+.rise{animation:rise .9s ease both}.rise.d2{animation-delay:.15s}.rise.d3{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+/* states of matter */
+.states{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.box{position:relative;height:170px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#050505}
+.mol{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px rgba(110,211,165,.6)}
+.states .card p{font-size:.92rem;margin:.6rem 0 0}
+/* heating curve */
+.chart{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:#050505}
+.ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:1rem}
+input[type=range]{flex:1;min-width:200px;accent-color:var(--accent)}
+.readout{font-family:"IBM Plex Mono",monospace;color:var(--brass);font-size:.95rem}
+.phase{font-family:"IBM Plex Mono",monospace;color:var(--accent)}
+/* latent heat bars */
+.bars{display:flex;flex-direction:column;gap:.9rem;margin-top:1rem}
+.barrow{display:grid;grid-template-columns:13rem 1fr 6.5rem;gap:.8rem;align-items:center;font-size:.9rem}
+.track{height:18px;border-radius:9px;background:#151515;overflow:hidden;border:1px solid var(--line)}
+.fill{height:100%;width:0;border-radius:9px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.slide.active .fill{width:var(--w)}
+/* pots */
+.pot{position:relative;width:180px;height:150px;margin:1rem auto 0}
+.pot .body{position:absolute;bottom:0;left:15px;right:15px;height:110px;border:3px solid #6b665c;border-top:none;border-radius:0 0 18px 18px;overflow:hidden}
+.pot .water{position:absolute;bottom:0;left:0;right:0;height:75%;background:linear-gradient(180deg,rgba(110,211,165,.35),rgba(110,211,165,.15))}
+.pot .lid{position:absolute;top:30px;left:8px;right:8px;height:8px;background:#8a8478;border-radius:4px}
+.bub{position:absolute;bottom:0;width:8px;height:8px;border:1.5px solid rgba(235,230,218,.7);border-radius:50%;animation:bub 2s linear infinite}
+@keyframes bub{from{transform:translateY(0);opacity:1}to{transform:translateY(-80px);opacity:0}}
+.steam{position:absolute;top:10px;width:10px;height:10px;border-radius:50%;background:rgba(235,230,218,.35);filter:blur(2px);animation:steam 2.6s ease-out infinite}
+@keyframes steam{from{transform:translateY(30px) scale(.6);opacity:.8}to{transform:translateY(-40px) scale(1.8);opacity:0}}
+.gauge{display:block;margin:1rem auto 0}
+.btnrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+button.ghost{font:inherit;font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+button.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.warn{border-left:3px solid var(--heat);padding-left:.8rem;color:#e9c9b6;font-size:.92rem}
+/* altitude */
+.mtn{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:linear-gradient(#050a12,#000)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1rem}
+.stat{border:1px solid var(--line);border-radius:12px;padding:.8rem}
+.stat b{display:block;font-family:"Fraunces",serif;font-size:1.6rem;color:var(--accent)}
+.stat span{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+ul.list{padding-left:1.1rem}ul.list li{margin:.5rem 0;color:#d6d1c4}
+.take{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,2.4rem);color:var(--text);max-width:52rem;border-left:3px solid var(--brass);padding-left:1.2rem}
+nav.ctl{position:fixed;bottom:1.1rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:.8rem;padding:.4rem;border:1px solid var(--line);border-radius:999px;background:rgba(0,0,0,.7);backdrop-filter:blur(12px)}
+nav.ctl button{width:2.4rem;height:2.4rem;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);font-size:1rem;cursor:pointer}
+nav.ctl button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+nav.ctl button:disabled{opacity:.3;cursor:default}
+.dots{display:flex;gap:.4rem}
+.dots button{width:.55rem!important;height:.55rem!important;padding:0;border-radius:50%;background:#333!important;border:none!important}
+.dots button.on{background:var(--accent)!important}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}.barrow{grid-template-columns:1fr;gap:.3rem}}
+@media (max-width:640px){.states{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.dots{display:none}.slide{padding-top:4.5rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="bar">
+  <a class="back" href="../">← Back to site</a>
+  <span class="counter" id="counter">01 / 09</span>
+</header>
+
+<main class="deck" id="deck">
+  <section class="slide" aria-label="Title">
+    <div class="inner">
+      <div class="label rise"><span class="idx">00</span>Anthony Geoffron · Presentations</div>
+      <h1 class="rise d2">Boiling Water: <em>Pressure, Altitude</em> &amp; the Open vs. Closed Container</h1>
+      <p class="rise d3">Why a pot of water boils at 100&nbsp;°C in Los Angeles, at 92&nbsp;°C in Denver, and way above 100&nbsp;°C inside a pressure cooker — explained without chemistry jargon.</p>
+      <div class="hero-hint rise d3">Use ← → arrow keys, the buttons below, or swipe.</div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="States of matter">
+    <div class="inner">
+      <div class="label"><span class="idx">01</span>States of matter</div>
+      <h2>Same molecules, <em>different energy</em></h2>
+      <p>Water molecules are always moving. Temperature is just a measure of their average speed. How much they move decides whether water is ice, liquid, or steam.</p>
+      <div class="states">
+        <div class="card"><div class="box" id="boxSolid"></div><h3>Solid · ice</h3><p>Locked in a lattice. They only vibrate in place.</p></div>
+        <div class="card"><div class="box" id="boxLiquid"></div><h3>Liquid · water</h3><p>Close together but sliding past each other.</p></div>
+        <div class="card"><div class="box" id="boxGas"></div><h3>Gas · steam</h3><p>Free and fast, flying across all the space they get.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="What is boiling">
+    <div class="inner grid2">
+      <div>
+        <div class="label"><span class="idx">02</span>The boiling point</div>
+        <h2>Boiling is an <em>escape</em></h2>
+        <p>Even cool water evaporates: a few fast molecules slip off the surface. Boiling is different. It's the temperature where molecules <em>throughout</em> the liquid have enough energy to form bubbles of vapor that push back against the air pressing down on the water.</p>
+        <p>At sea level, that tipping point is <span class="mono" style="color:var(--brass)">100&nbsp;°C / 212&nbsp;°F</span>. Change the pressure and you change the boiling point.</p>
+      </div>
+      <div class="card">
+        <div class="pot"><div class="body"><div class="water" id="pot1"></div></div></div>
+        <p class="muted mono" style="text-align:center;font-size:.8rem">Vapor pressure of the bubbles = pressure of the air → boil</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Heating curve">
+    <div class="inner">
+      <div class="label"><span class="idx">03</span>Heating curve</div>
+      <h2>Add heat, and the temperature <em>stalls</em></h2>
+      <p>Heat 1&nbsp;kg of ice at a steady rate. The temperature climbs, then sits flat twice — while ice melts and while water boils. Drag the slider to add energy.</p>
+      <svg class="chart" id="curve" viewBox="0 0 800 320" role="img" aria-label="Heating curve of water"></svg>
+      <div class="ctrl">
+        <input type="range" id="heatSlider" min="0" max="3200" step="10" value="0" aria-label="Energy added" />
+        <span class="readout" id="heatReadout">0 kJ · −20 °C</span>
+        <span class="phase" id="heatPhase">Ice warming</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Latent heat">
+    <div class="inner">
+      <div class="label"><span class="idx">04</span>Latent heat</div>
+      <h2>Where does the heat <em>go</em>?</h2>
+      <p>On the flat parts of the curve, energy isn't raising the temperature. It's breaking the bonds holding molecules together. That hidden energy is called <em>latent heat</em>, and for boiling it's enormous.</p>
+      <div class="bars">
+        <div class="barrow"><span>Warm 1&nbsp;kg water by 1&nbsp;°C</span><div class="track"><div class="fill" style="--w:0.6%;background:var(--accent)"></div></div><span class="mono">4.19 kJ</span></div>
+        <div class="barrow"><span>Warm 1&nbsp;kg water 0 → 100&nbsp;°C</span><div class="track"><div class="fill" style="--w:18.5%;background:var(--accent)"></div></div><span class="mono">419 kJ</span></div>
+        <div class="barrow"><span>Boil 1&nbsp;kg water into steam</span><div class="track"><div class="fill" style="--w:100%;background:var(--brass)"></div></div><span class="mono">2,260 kJ</span></div>
+      </div>
+      <p class="muted" style="margin-top:1.2rem">Turning boiling water into steam takes about <b style="color:var(--brass)">5.4×</b> the energy it took to heat it from freezing to boiling. That's why a pot takes so long to boil dry, and why steam burns are so severe.</p>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Open vs closed">
+    <div class="inner">
+      <div class="label"><span class="idx">05</span>Open vs. closed container</div>
+      <h2>Trap the steam, <em>raise the boiling point</em></h2>
+      <div class="grid2">
+        <div class="card">
+          <span class="pill">Open pot</span>
+          <div class="pot"><div class="body"><div class="water" id="potOpen"></div></div></div>
+          <p>Steam escapes, so the pressure stays at the atmosphere's <span class="mono">14.7&nbsp;psi</span>. Water boils at <b>100&nbsp;°C</b> and can't get any hotter, however high the flame.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Sealed pot · pressure cooker</span>
+          <svg class="gauge" id="gauge" width="220" height="130" viewBox="0 0 220 130" aria-label="Pressure and temperature gauges">
+            <path d="M20 115 A90 90 0 0 1 200 115" fill="none" stroke="#222" stroke-width="12"/>
+            <path d="M20 115 A90 90 0 0 1 200 115" fill="none" stroke="url(#gg)" stroke-width="4"/>
+            <defs><linearGradient id="gg"><stop offset="0" stop-color="#6ed3a5"/><stop offset=".7" stop-color="#d4b06a"/><stop offset="1" stop-color="#e8875a"/></linearGradient></defs>
+            <line id="pNeedle" x1="110" y1="115" x2="110" y2="35" stroke="#ebe6da" stroke-width="3" stroke-linecap="round" transform="rotate(-90 110 115)"/>
+            <circle cx="110" cy="115" r="6" fill="#d4b06a"/>
+          </svg>
+          <div class="stats" style="grid-template-columns:1fr 1fr">
+            <div class="stat"><span>Pressure</span><b id="pVal">14.7 psi</b></div>
+            <div class="stat"><span>Boils at</span><b id="tVal">100 °C</b></div>
+          </div>
+          <div class="btnrow"><button class="ghost" id="heatBtn">Seal &amp; heat</button><button class="ghost" id="ventBtn">Vent</button></div>
+          <p style="font-size:.92rem">With the lid sealed, steam builds pressure: ~<span class="mono">29.7&nbsp;psi</span> absolute (15&nbsp;psi on the gauge) pushes the boiling point to about <b>121&nbsp;°C</b>. Hotter water cooks food roughly 2–3× faster.</p>
+          <p class="warn">Danger: if a sealed, superheated pot opens suddenly, the pressure drops and the water flashes to steam all at once — violently. Always vent pressure cookers as instructed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Altitude">
+    <div class="inner grid2">
+      <div>
+        <div class="label"><span class="idx">06</span>Altitude &amp; pressure</div>
+        <h2>Climb higher, <em>boil cooler</em></h2>
+        <p>The higher you go, the less air is stacked above you, so it presses down less. Bubbles form more easily, and water boils at a lower temperature.</p>
+        <div class="ctrl"><input type="range" id="altSlider" min="0" max="3" step="1" value="0" aria-label="Altitude" /></div>
+        <div class="stats">
+          <div class="stat"><span>Altitude</span><b id="altVal">0 ft</b></div>
+          <div class="stat"><span>Air pressure</span><b id="altP">14.7 psi</b></div>
+          <div class="stat"><span>Boils at</span><b id="altT">100 °C</b></div>
+        </div>
+        <p class="muted mono" id="altPlace" style="font-size:.85rem;margin-top:.8rem">Sea level</p>
+      </div>
+      <svg class="mtn" id="mtn" viewBox="0 0 400 300" aria-label="Mountain with a pot at the selected altitude">
+        <polygon points="0,300 120,170 170,200 260,40 400,300" fill="#141414" stroke="#2a2a2a"/>
+        <polygon points="240,75 260,40 282,82 268,74 254,86" fill="#ebe6da" opacity=".8"/>
+        <line x1="0" y1="290" x2="400" y2="290" stroke="#2a2a2a"/>
+        <g id="climber"><rect x="-14" y="-12" width="28" height="14" rx="3" fill="#6b665c"/><circle cx="-5" cy="-18" r="3" fill="rgba(235,230,218,.5)"/><circle cx="5" cy="-24" r="4" fill="rgba(235,230,218,.35)"/></g>
+        <text id="mtnLabel" x="12" y="24" fill="#d4b06a" font-family="IBM Plex Mono, monospace" font-size="13">100 °C</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Why it matters">
+    <div class="inner">
+      <div class="label"><span class="idx">07</span>Why it matters</div>
+      <h2>Real life at <em>lower boiling points</em></h2>
+      <div class="grid2">
+        <div class="card"><h3>Cooking at altitude</h3><p>In Denver, boiling water is only ~92&nbsp;°C, so pasta and eggs take noticeably longer. Recipes add time, liquid, or a pressure cooker.</p></div>
+        <div class="card"><h3>Airplanes</h3><p>Cabins are pressurized to the equivalent of ~6,000–8,000&nbsp;ft, so the in-flight kettle boils around 93&nbsp;°C. Coffee tastes flatter, partly for this reason.</p></div>
+        <div class="card"><h3>Tea on Everest</h3><p>Near base camp, water boils at ~82&nbsp;°C, too cool to properly steep black tea, which wants water near 100&nbsp;°C.</p></div>
+        <div class="card"><h3>Vacuum chambers</h3><p>Pump out enough air and water boils at room temperature, or even while it's cold enough to start freezing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Takeaway">
+    <div class="inner">
+      <div class="label"><span class="idx">08</span>Takeaway</div>
+      <p class="take">Boiling isn't about heat alone — it's about the balance between molecular energy and the pressure pushing back.</p>
+      <ul class="list" style="margin-top:1.6rem">
+        <li><b style="color:var(--brass)">Fun fact:</b> on Mars, where air pressure is under 1% of Earth's, liquid water would boil away at just a few degrees above freezing.</li>
+        <li><b style="color:var(--brass)">Fun fact:</b> a microwaved cup of water can superheat past 100&nbsp;°C without bubbling, then erupt when disturbed.</li>
+      </ul>
+      <p style="margin-top:1.4rem"><a href="../">← Back to Anthony Geoffron's site</a></p>
+    </div>
+  </section>
+</main>
+
+<nav class="ctl" aria-label="Slide navigation">
+  <button id="prevBtn" aria-label="Previous slide">←</button>
+  <div class="dots" id="dots"></div>
+  <button id="nextBtn" aria-label="Next slide">→</button>
+</nav>
+
+<script>
+(function () {
+  "use strict";
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var dots = document.getElementById("dots");
+  var counter = document.getElementById("counter");
+  var progress = document.getElementById("progress");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+  var current = 0;
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  slides.forEach(function (_, i) {
+    var b = document.createElement("button");
+    b.setAttribute("aria-label", "Go to slide " + (i + 1));
+    b.addEventListener("click", function () { go(i); });
+    dots.appendChild(b);
+  });
+
+  function go(i) {
+    current = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, j) { s.classList.toggle("active", j === current); });
+    Array.prototype.forEach.call(dots.children, function (d, j) { d.classList.toggle("on", j === current); });
+    counter.textContent = pad(current + 1) + " / " + pad(slides.length);
+    progress.style.width = ((current + 1) / slides.length * 100) + "%";
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === slides.length - 1;
+    if (history.replaceState) history.replaceState(null, "", "#" + (current + 1));
+  }
+  prevBtn.addEventListener("click", function () { go(current - 1); });
+  nextBtn.addEventListener("click", function () { go(current + 1); });
+  document.addEventListener("keydown", function (e) {
+    if (e.target && e.target.tagName === "INPUT") return;
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); go(current + 1); }
+    else if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(current - 1); }
+    else if (e.key === "Home") go(0);
+    else if (e.key === "End") go(slides.length - 1);
+  });
+  var tx = null;
+  document.addEventListener("touchstart", function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (e.target && e.target.tagName === "INPUT") return;
+    if (Math.abs(dx) > 60) go(current + (dx < 0 ? 1 : -1));
+  });
+  var start = parseInt((location.hash || "").slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1);
+
+  /* States of matter animation */
+  function makeBox(id, mode) {
+    var box = document.getElementById(id), mols = [];
+    for (var i = 0; i < 16; i++) {
+      var m = document.createElement("div"); m.className = "mol"; box.appendChild(m);
+      var gx = 30 + (i % 4) * 28, gy = 35 + Math.floor(i / 4) * 28;
+      mols.push({ el: m, hx: gx, hy: gy, x: mode === "gas" ? Math.random() * 200 : gx, y: mode === "gas" ? Math.random() * 150 : (mode === "liquid" ? 60 + Math.random() * 90 : gy),
+        vx: (Math.random() - .5) * (mode === "gas" ? 3 : .8), vy: (Math.random() - .5) * (mode === "gas" ? 3 : .8) });
+    }
+    return { box: box, mols: mols, mode: mode };
+  }
+  var boxes = [makeBox("boxSolid", "solid"), makeBox("boxLiquid", "liquid"), makeBox("boxGas", "gas")];
+  var t = 0;
+  function tick() {
+    t++;
+    boxes.forEach(function (b) {
+      var W = b.box.clientWidth - 12, H = b.box.clientHeight - 12;
+      b.mols.forEach(function (m, i) {
+        if (b.mode === "solid") {
+          var ox = (W - 112) / 2;
+          m.x = m.hx + ox + Math.sin(t * .3 + i) * 1.5; m.y = m.hy + Math.cos(t * .27 + i * 2) * 1.5;
+        } else {
+          m.x += m.vx; m.y += m.vy;
+          var top = b.mode === "liquid" ? H * .35 : 0;
+          if (m.x < 0 || m.x > W) { m.vx *= -1; m.x = Math.max(0, Math.min(W, m.x)); }
+          if (m.y < top || m.y > H) { m.vy *= -1; m.y = Math.max(top, Math.min(H, m.y)); }
+          if (b.mode === "liquid") { m.vx += (Math.random() - .5) * .2; m.vy += (Math.random() - .5) * .2; m.vx *= .98; m.vy *= .98; }
+        }
+        m.el.style.transform = "translate(" + m.x + "px," + m.y + "px)";
+      });
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  /* Bubbles + steam for pots */
+  function fillPot(id, n) {
+    var w = document.getElementById(id);
+    for (var i = 0; i < n; i++) {
+      var b = document.createElement("span"); b.className = "bub";
+      b.style.left = (8 + Math.random() * 84) + "%";
+      b.style.animationDelay = (Math.random() * 2) + "s";
+      b.style.animationDuration = (1.4 + Math.random()) + "s";
+      w.appendChild(b);
+    }
+    var pot = w.closest(".pot");
+    for (var j = 0; j < 5; j++) {
+      var s = document.createElement("span"); s.className = "steam";
+      s.style.left = (25 + j * 12) + "%"; s.style.animationDelay = (j * .5) + "s";
+      pot.appendChild(s);
+    }
+  }
+  fillPot("pot1", 10); fillPot("potOpen", 10);
+
+  /* Heating curve (1 kg, ice from -20 °C to steam at 120 °C) */
+  var cIce = 2.09, cWater = 4.19, cSteam = 2.01, Lf = 334, Lv = 2260;
+  var segs = [
+    { e: 20 * cIce, t0: -20, t1: 0, name: "Ice warming" },
+    { e: Lf, t0: 0, t1: 0, name: "Melting · latent heat of fusion" },
+    { e: 100 * cWater, t0: 0, t1: 100, name: "Water warming" },
+    { e: Lv, t0: 100, t1: 100, name: "Boiling · latent heat of vaporization" },
+    { e: 20 * cSteam, t0: 100, t1: 120, name: "Steam warming" }
+  ];
+  var Etot = segs.reduce(function (a, s) { return a + s.e; }, 0);
+  function tempAt(E) {
+    var acc = 0;
+    for (var i = 0; i < segs.length; i++) {
+      var s = segs[i];
+      if (E <= acc + s.e || i === segs.length - 1) {
+        var f = Math.min(1, Math.max(0, (E - acc) / s.e));
+        return { T: s.t0 + (s.t1 - s.t0) * f, name: s.name };
+      }
+      acc += s.e;
+    }
+  }
+  var svg = document.getElementById("curve"), NS = "http://www.w3.org/2000/svg";
+  var X0 = 60, X1 = 780, Y0 = 290, Y1 = 20;
+  function sx(E) { return X0 + (E / Etot) * (X1 - X0); }
+  function sy(T) { return Y0 - ((T + 20) / 140) * (Y0 - Y1); }
+  function el(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; }
+  [-20, 0, 50, 100, 120].forEach(function (T) {
+    el("line", { x1: X0, x2: X1, y1: sy(T), y2: sy(T), stroke: "#1e1e1e" });
+    var tx2 = el("text", { x: 14, y: sy(T) + 4, fill: "#9b9688", "font-size": 12, "font-family": "IBM Plex Mono, monospace" }); tx2.textContent = T + "°C";
+  });
+  var d = "", acc = 0;
+  segs.forEach(function (s, i) {
+    d += (i === 0 ? "M" : "L") + sx(acc) + " " + sy(s.t0) + " ";
+    acc += s.e; d += "L" + sx(acc) + " " + sy(s.t1) + " ";
+  });
+  el("path", { d: d, fill: "none", stroke: "#333", "stroke-width": 3 });
+  var live = el("path", { d: "", fill: "none", stroke: "#6ed3a5", "stroke-width": 3 });
+  var lab1 = el("text", { x: sx(20 * cIce) + 6, y: sy(0) - 8, fill: "#d4b06a", "font-size": 12, "font-family": "IBM Plex Mono, monospace" }); lab1.textContent = "melting";
+  var lab2 = el("text", { x: sx(20 * cIce + Lf + 100 * cWater) + 10, y: sy(100) - 8, fill: "#d4b06a", "font-size": 12, "font-family": "IBM Plex Mono, monospace" }); lab2.textContent = "boiling — 2,260 kJ plateau";
+  var dot = el("circle", { r: 7, fill: "#d4b06a", cx: sx(0), cy: sy(-20) });
+  var heatSlider = document.getElementById("heatSlider");
+  heatSlider.max = Math.round(Etot);
+  function updateHeat() {
+    var E = +heatSlider.value, r = tempAt(E);
+    var dd = "", a = 0;
+    for (var i = 0; i < segs.length; i++) {
+      var s = segs[i];
+      dd += (i === 0 ? "M" : "L") + sx(a) + " " + sy(s.t0) + " ";
+      if (E <= a + s.e) { dd += "L" + sx(E) + " " + sy(r.T) + " "; break; }
+      a += s.e; dd += "L" + sx(a) + " " + sy(s.t1) + " ";
+    }
+    live.setAttribute("d", dd);
+    dot.setAttribute("cx", sx(E)); dot.setAttribute("cy", sy(r.T));
+    document.getElementById("heatReadout").textContent = Math.round(E).toLocaleString() + " kJ · " + Math.round(r.T) + " °C";
+    document.getElementById("heatPhase").textContent = r.name;
+  }
+  heatSlider.addEventListener("input", updateHeat); updateHeat();
+
+  /* Pressure cooker gauge */
+  var pNeedle = document.getElementById("pNeedle"), pVal = document.getElementById("pVal"), tVal = document.getElementById("tVal");
+  var P = 14.7, target = 14.7;
+  function bpFromPsi(psi) { /* Antoine-equation estimate for water */
+    var mmHg = psi * 51.7149; return 1730.63 / (8.07131 - Math.log10(mmHg)) - 233.426;
+  }
+  function gaugeLoop() {
+    P += (target - P) * 0.03;
+    var frac = (P - 14.7) / 15; var ang = -90 + Math.max(0, Math.min(1, frac)) * 180;
+    pNeedle.setAttribute("transform", "rotate(" + ang + " 110 115)");
+    pVal.textContent = P.toFixed(1) + " psi";
+    tVal.textContent = Math.round(bpFromPsi(P)) + " °C";
+    tVal.style.color = P > 15.5 ? "#e8875a" : "";
+    requestAnimationFrame(gaugeLoop);
+  }
+  requestAnimationFrame(gaugeLoop);
+  document.getElementById("heatBtn").addEventListener("click", function () { target = 29.7; });
+  document.getElementById("ventBtn").addEventListener("click", function () { target = 14.7; });
+
+  /* Altitude slider */
+  var alts = [
+    { ft: "0 ft", psi: "14.7 psi", c: 100, f: 212, place: "Sea level", x: 40, y: 290 },
+    { ft: "~7,000 ft", psi: "~11.3 psi", c: 92, f: 198, place: "Denver-ish", x: 150, y: 190 },
+    { ft: "~10,000 ft", psi: "~10.1 psi", c: 90, f: 194, place: "High mountain passes", x: 215, y: 120 },
+    { ft: "~17,600 ft", psi: "~7.3 psi", c: 82, f: 180, place: "Mt. Everest base camp", x: 255, y: 52 }
+  ];
+  var altSlider = document.getElementById("altSlider"), climber = document.getElementById("climber");
+  climber.style.transition = "transform .6s ease";
+  function updateAlt() {
+    var a = alts[+altSlider.value];
+    document.getElementById("altVal").textContent = a.ft;
+    document.getElementById("altP").textContent = a.psi;
+    document.getElementById("altT").textContent = a.c + " °C";
+    document.getElementById("altPlace").textContent = a.place + " · boils at " + a.c + " °C / " + a.f + " °F";
+    document.getElementById("mtnLabel").textContent = a.ft + " → " + a.c + " °C";
+    climber.setAttribute("transform", "translate(" + a.x + " " + a.y + ")");
+  }
+  altSlider.addEventListener("input", updateAlt); updateAlt();
+})();
+</script>
+</body>
+</html>
