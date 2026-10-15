@@ -1,82 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Santa Cruz Road Trip</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:wght@500;700&display=swap" rel="stylesheet">
-<style>
-:root{--deep:#0b2540;--deep2:#123a5e;--sand:#e9d8b4;--sand2:#f6eedc;--teal:#2bb3a3;--ink:#f3efe6;--mute:#a9bccd;--card:rgba(255,255,255,.06);--line:rgba(233,216,180,.18)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{margin:0;color:var(--ink);font:16px/1.6 Figtree,sans-serif;background:linear-gradient(180deg,var(--deep) 0%,var(--deep2) 60%,#1a4d6b 100%) fixed}
-.wrap{max-width:900px;margin:0 auto;padding:22px 18px 60px}a{color:var(--teal)}
-.back{text-decoration:none;font-weight:600;font-size:.9rem}
-header{padding:20px 0 6px}h1{font-family:Fraunces,serif;font-size:clamp(2.1rem,7vw,3.4rem);margin:.2em 0;color:var(--sand2)}
-h2{font-family:Fraunces,serif;color:var(--sand);margin:1.8em 0 .6em}h3{font-family:Fraunces,serif;margin:.1em 0 .4em;color:var(--sand2)}
-.lead{color:var(--mute)}.pill{display:inline-block;background:rgba(43,179,163,.15);color:var(--teal);border:1px solid rgba(43,179,163,.4);border-radius:99px;padding:3px 10px;font-size:.78rem;font-weight:600;margin:2px 4px 2px 0}
-nav.sec{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 18px;margin:0 -18px;background:rgba(11,37,64,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav.sec a{white-space:nowrap;text-decoration:none;color:var(--sand);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:.85rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:12px;backdrop-filter:blur(10px)}
-.days{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.days button,.toggle button{font:600 .95rem Figtree,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px;cursor:pointer;text-align:center}
-.days button .ic{display:block;font-size:1.6rem}.days button small{display:block;color:var(--mute);font-weight:400}
-.days button[aria-selected=true],.toggle button[aria-pressed=true]{border-color:var(--teal);background:rgba(43,179,163,.14);color:var(--sand2)}
-button:focus-visible,a:focus-visible,[role=tabpanel]:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.panel{margin-top:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
-.stat{border:1px solid var(--line);border-radius:12px;padding:10px;background:rgba(0,0,0,.12)}.stat span{font-size:.75rem;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}.stat b{display:block}
-ul{padding-left:1.2em}li{margin:4px 0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.toggle{display:flex;gap:8px;margin-bottom:12px}.toggle button{flex:1}
-table{width:100%;border-collapse:collapse}td{padding:9px 4px;border-bottom:1px solid var(--line);vertical-align:top}td.n{text-align:right;white-space:nowrap;font-weight:600}
-.small{font-size:.85rem;color:var(--mute)}tr.total td{border:none;color:var(--teal);font-size:1.1rem;font-weight:700}
-@media(max-width:860px){.days{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.stats,.grid2{grid-template-columns:1fr}.card{padding:16px}}
-</style></head><body><main class="wrap">
-<a class="back" href="./">← Back to site</a>
-<header><span class="pill">🚐 Camping van</span><span class="pill">🐕 Dog-friendly</span><span class="pill">Nov 27–30, 2026</span>
-<h1>Santa Cruz Road Trip</h1><p class="lead">Four days up the California coast from South Pasadena to Santa Cruz and back, with a dog along for the ride.</p></header>
-<nav class="sec" aria-label="Sections"><a href="#overview">Overview</a><a href="#days">Days</a><a href="#alternatives">Alternatives</a><a href="#costs">Costs</a><a href="#notes">Notes</a></nav>
-
-<section id="overview"><h2>🧭 Overview</h2><div class="card">
-<div class="stats"><div class="stat"><span>Depart</span><b>Fri Nov 27 · ~12:15 PM</b></div><div class="stat"><span>Van pickup</span><b>By 1:00 PM</b></div><div class="stat"><span>Route</span><b>US-101 north</b></div></div>
-<p>Depart South Pasadena around 12:15 PM, pick up the Indie Campers van at the Towne Avenue depot in South LA by 1:00 PM, then head north on US-101.</p></div></section>
-
-<section id="days"><h2>🗓️ Day by day</h2>
-<div class="days" role="tablist" aria-label="Trip days" id="daytabs">
-<button role="tab" id="tab-fri" aria-controls="day-fri" aria-selected="true"><span class="ic" aria-hidden="true">🚐</span>Fri<small>Nov 27</small></button>
-<button role="tab" id="tab-sat" aria-controls="day-sat" aria-selected="false"><span class="ic" aria-hidden="true">🌊</span>Sat<small>Nov 28</small></button>
-<button role="tab" id="tab-sun" aria-controls="day-sun" aria-selected="false"><span class="ic" aria-hidden="true">🏞️</span>Sun<small>Nov 29</small></button>
-<button role="tab" id="tab-mon" aria-controls="day-mon" aria-selected="false"><span class="ic" aria-hidden="true">🏠</span>Mon<small>Nov 30</small></button></div>
-
-<section id="alternatives"><h2>🔀 Shorter Sunday options</h2><div class="grid2">
-<div class="card"><h3>San Simeon · Cambria</h3><p>Stop at San Simeon instead of Morro Bay to shorten Sunday's drive.</p></div>
-<div class="card"><h3>Pismo Beach</h3><p>Sites from $25.</p></div></div></section>
-
-<section id="costs"><h2>💵 Costs</h2>
-<div class="toggle" role="group" aria-label="Van option"><button id="opt-indie" aria-pressed="true">Indie (primary)</button><button id="opt-escape" aria-pressed="false">Escape (backup)</button></div>
-<div class="card"><table><tbody>
-<tr><td id="van-label"></td><td class="n" id="van-cost"></td></tr>
-<tr><td>Campsites<div class="small">Morro Bay Fri $35 · Sunset Sat $35 · Morro Bay Sun $35</div></td><td class="n">$105</td></tr>
-<tr><td>Gas<div class="small">~1,150 mi round trip</div></td><td class="n">~$295</td></tr>
-<tr><td>Food</td><td class="n">~$200</td></tr>
-<tr><td>Misc</td><td class="n">~$50</td></tr>
-<tr class="total"><td>Total</td><td class="n" id="total-cost"></td></tr></tbody></table></div>
-<p class="small">Indie is the clear choice unless a private Outdoorsy/RVshare van closer to South Pasadena beats the Towne Avenue drive.</p></section>
-
-<section id="notes"><h2>📝 Notes</h2><div class="card"><ul>
-<li><b>Nothing is booked yet.</b> First reservations on <a href="https://www.reservecalifornia.com" rel="noopener">ReserveCalifornia</a>: Morro Bay Fri, Sunset Sat, Morro Bay Sun.</li>
-<li>West Cliff overnight van parking is not legal.</li>
-<li>New Brighton and Seacliff are full.</li>
-<li>Harbor RV Park won't take a small van without a built-in toilet.</li>
-<li>The dog is 60–70 lbs, against Indie's 66-lb cap; Escape has no limit.</li>
-<li>Vans to compare: Indie (Towne Ave, South LA) and Escape (no weight limit, $150 pet fee).</li>
-<li>Leash on trails.</li><li>The van must be returned Monday.</li></ul></div></section>
-</main><script>
-(function(){
-var tabs=[].slice.call(document.querySelectorAll('#daytabs [role=tab]'));
-function sel(i,f){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on});if(f)tabs[i].focus()}
-tabs.forEach(function(t,i){t.addEventListener('click',function(){sel(i)});t.addEventListener('keydown',function(e){var n=tabs.length,k=e.key,x=-1;
-if(k==='ArrowRight')x=(i+1)%n;else if(k==='ArrowLeft')x=(i-1+n)%n;else if(k==='Home')x=0;else if(k==='End')x=n-1;if(x>=0){sel(x,1);e.preventDefault()}})});
-var o={indie:['Van · Indie Campers<div class="small">60-lb dog is under the 66-lb / 30 kg limit, so the pet rides free</div>','~$456','~$1,100'],
-escape:['Van · Escape Campervans<div class="small">No weight limit; includes $150 flat pet fee</div>','~$630','~$1,280']);
-var bi=document.getElementById('opt-indie'),be=document.getElementById('opt-escape);
-function pick(k){document.getElementById('van-label').innerHTML=o[k][0];document.getElementById('van-cost').textContent=o[k][1];document.getElementById('total-cost').textContent=o[k][2];bi.setAttribute('aria-pressed',k==='indie');be.setAttribute('aria-pressed',k==='escape')}
-bi.onclick=function(){pick('indie')};be.onclick=function(){pick('escape')};pick('indie);
-})();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="refresh" content="0; url=https://ageoffron.github.io/projectX/presentations/santa-cruz-road-trip.html" />
+<link rel="canonical" href="https://ageoffron.github.io/projectX/presentations/santa-cruz-road-trip.html" />
+<title>Redirecting…</title>
+<script>location.replace("https://ageoffron.github.io/projectX/presentations/santa-cruz-road-trip.html");</script>
+</head>
+<body>
+<p>Redirecting to <a href="https://ageoffron.github.io/projectX/presentations/santa-cruz-road-trip.html">the Santa Cruz Road Trip page</a>.</p>
+</body>
+</html>
