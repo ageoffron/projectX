@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dog Hikes — Anthony Geoffron</title>
-<meta name="description" content="Dog-friendly hiking options along the Santa Cruz coast for the November 2026 road trip." />
+<meta name="description" content="Dog-friendly hiking along the Santa Cruz coast and in the San Gabriel Mountains for the November 2026 road trip." />
 <link rel="icon" href="https://ageoffron.github.io/projectX/assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,9 +26,14 @@
 .card{padding:1.3rem 1.3rem 1.4rem;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.58);backdrop-filter:blur(10px);margin-bottom:1rem}
 .card h3{margin:0 0 .5rem;font-family:"Fraunces","Times New Roman",serif;font-size:1.15rem;font-weight:550;color:var(--brass)}
 .card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .meta{margin:.6rem 0 0;color:var(--muted);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.map-wrap{margin-top:1rem;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0a0a0a}
+.map-wrap iframe{display:block;width:100%;height:320px;border:0}
+.map-note{margin:.5rem 0 0;color:var(--muted);font-size:.85rem}
 ul.list{padding-left:1.1rem;margin:0}
 ul.list li{margin:.45rem 0;color:#d5d0c3}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:640px){.card{padding:1.1rem}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -46,32 +51,82 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <main id="main">
   <div class="page-hero">
     <a class="back" href="https://ageoffron.github.io/projectX/#presentations">← Back to Presentations</a>
-    <p class="kicker">Dog-Friendly · Coastal Trails</p>
+    <p class="kicker">Dog-Friendly · Two Regions</p>
     <h1>Dog Hikes</h1>
-    <p class="lede">Trail options for the sixty-pound pup along the Santa Cruz coast, checked against leash rules and seasonal access.</p>
+    <p class="lede">Trail options for the sixty-pound pup — Santa Cruz coast for the November trip, San Gabriel Mountains for home turf. Leash rules checked against each land manager.</p>
   </div>
-  <section class="sec" id="trails">
-    <div class="sec-label"><span class="idx">01</span><h2>Trails</h2></div>
+
+  <section class="sec" id="santa-cruz">
+    <div class="sec-label"><span class="idx">01</span><h2>Santa Cruz coast</h2></div>
     <div class="card">
       <h3>West Cliff Drive</h3>
-      <p>Paved coastal path from Natural Bridges to the wharf. Leash required. No overnight van parking along it.</p>
-    </div>
-    <div class="card">
-      <h3>Wilder Ranch</h3>
-      <p>Coastal bluff trails south of town. Day-use fee. Leash on.</p>
+      <p>Paved clifftop path, about two and a half miles from the lighthouse at Lighthouse Field to Natural Bridges. Ocean on one side, Monterey Bay views on clear days. Leash required the whole way. Free street parking at pullouts — arrive early on weekends. Dogs can't enter Natural Bridges State Park itself past the lot, so turn around at the boundary. Mitchell's Cove, near Almar Avenue, is the county's only legal off-leash beach: before ten a.m. and after four p.m.</p>
+      <p class="meta">Leash · 6 ft max · Free parking</p>
+      <div class="map-wrap">
+        <iframe title="West Cliff Drive map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.0675%2C36.9485%2C-122.0245%2C36.9725&layer=mapnik&marker=36.9605%2C-122.0460"></iframe>
+      </div>
+      <p class="map-note">OpenStreetMap embed centered on West Cliff Drive, Santa Cruz.</p>
     </div>
     <div class="card">
       <h3>Henry Cowell Redwoods</h3>
-      <p>Redwood groves inland. Popular with dogs on leash; arrive early for parking.</p>
+      <p>Main entrance off Highway 9 in Felton. Dogs are allowed on the Meadow Trail, Graham Hill Trail, and the three-point-three-mile Pipeline Road that runs through the middle of the park along the San Lorenzo River — it passes under an active Roaring Camp railroad trestle. Not allowed on the old-growth Redwood Grove Loop or any Fall Creek unit trails. Six-foot leash, no unattended dogs. Day use sunrise to sunset.</p>
+      <p class="meta">Leash · Select trails only · Day use</p>
+      <div class="map-wrap">
+        <iframe title="Henry Cowell Redwoods map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.0750%2C37.0380%2C-122.0350%2C37.0680&layer=mapnik&marker=37.0530%2C-122.0550"></iframe>
+      </div>
+      <p class="map-note">OpenStreetMap embed centered on Henry Cowell Redwoods, Felton.</p>
+    </div>
+    <div class="card">
+      <h3>Arana Gulch</h3>
+      <p>Bluff-top open space by the Santa Cruz harbor. Leashed dogs on every trail except Marsh Vista. Closest dog-friendly trails to the Sunset State Beach campground.</p>
+      <p class="meta">Leash · Except Marsh Vista</p>
+    </div>
+    <div class="card">
+      <h3>Pogonip Open Space</h3>
+      <p>Miles of leashed-dog trails above town, including the Rincon Trail from the UCSC campus down to the Spring Box Trail and its spring-fed koi pond. Don't let the pup swim in it.</p>
+      <p class="meta">Leash · Multiple trailheads</p>
     </div>
   </section>
+
+  <section class="sec" id="san-gabriel">
+    <div class="sec-label"><span class="idx">02</span><h2>San Gabriel Mountains</h2></div>
+    <div class="card">
+      <h3>Brown Mountain / El Prieto</h3>
+      <p>A favorite loop in the Angeles National Forest above Pasadena — about eight miles, four to four and a half hours. Challenging climbs and fun descents, shade toward the end if you go counterclockwise. Free parking, large lot, bathrooms. Leashed dogs welcome; the San Gabriel Mountains National Monument requires a leash on trails.</p>
+      <p class="meta">Leash · ~8 mi loop · Free lot</p>
+      <div class="map-wrap">
+        <iframe title="Brown Mountain El Prieto map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-118.1850%2C34.1850%2C-118.1350%2C34.2250&layer=mapnik&marker=34.2050%2C-118.1600"></iframe>
+      </div>
+      <p class="map-note">OpenStreetMap embed centered on Brown Mountain, Altadena / Pasadena area.</p>
+    </div>
+    <div class="card">
+      <h3>Trail Canyon Falls</h3>
+      <p>Short drive from downtown Burbank. About four point seven miles, moderate — the first half is shaded with a couple of water crossings. Leashed dogs permitted on Angeles National Forest land. Parking at the trailhead may require an Adventure Pass; verify the current fee with the forest before you go.</p>
+      <p class="meta">Leash · ~4.7 mi · Adventure Pass likely</p>
+      <div class="map-wrap">
+        <iframe title="Trail Canyon Falls map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-118.3550%2C34.2350%2C-118.3050%2C34.2750&layer=mapnik&marker=34.2550%2C-118.3300"></iframe>
+      </div>
+      <p class="map-note">OpenStreetMap embed centered on Trail Canyon, near Big Tujunga Canyon.</p>
+    </div>
+    <div class="card">
+      <h3>Gabrielino Trail — Chantry Flat</h3>
+      <p>Historic packer route through forested canyon with creek crossings, noticeably better shaded than most chaparral trails — a real plus for a dog in warm weather. Leashed dogs permitted. Chantry Flat has historically required an Adventure Pass or America the Beautiful pass to park; confirm the current price with Angeles National Forest.</p>
+      <p class="meta">Leash · Shaded canyon · Pass required</p>
+      <div class="map-wrap">
+        <iframe title="Chantry Flat Gabrielino map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-118.0450%2C34.1850%2C-117.9950%2C34.2250&layer=mapnik&marker=34.2050%2C-118.0200"></iframe>
+      </div>
+      <p class="map-note">OpenStreetMap embed centered on Chantry Flat, Arcadia.</p>
+    </div>
+  </section>
+
   <section class="sec" id="notes">
-    <div class="sec-label"><span class="idx">02</span><h2>Notes</h2></div>
+    <div class="sec-label"><span class="idx">03</span><h2>Notes</h2></div>
     <div class="card">
       <ul class="list">
-        <li>Leash on every trail listed.</li>
-        <li>Check <a href="https://www.santacruztrails.org" rel=" noopener">Santa Cruz Trails</a> before you go — seasonal closures change fast.</li>
-        <li>Bring water; coastal fog rolls in quick even in late November.</li>
+        <li>Wilder Ranch is on the old list but <b>bans dogs entirely</b> except service animals — dropped it rather than mislead.</li>
+        <li>Six-foot leash is the safe default everywhere unless a trail is explicitly marked off-leash.</li>
+        <li>Wilderness areas inside national forests have stricter rules that override general forest policy — always check the ranger district site before you drive.</li>
+        <li>For Santa Cruz, the county's own brochure is the source of truth: <a href="https://www.santacruzca.gov/files/assets/city/v/1/pr/documents/where-can-i-take-my-dog.pdf" rel=" noopener">Where Can I Take My Dog</a>.</li>
       </ul>
     </div>
   </section>
