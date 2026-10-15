@@ -95,10 +95,10 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   <section class="sec" id="days">
     <div class="sec-label"><span class="idx">02</span><h2>Day by day</h2></div>
     <div class="days" role="tablist" aria-label="Trip days" id="daytabs">
-      <button role="tab" id="tab-fri" aria-controls="day-fri" aria-selected="true"><span class="ic" aria-hidden="true">🚐</span>Fri<small>Nov 27</small></button>
-      <button role="tab" id="tab-sat" aria-controls="day-sat" aria-selected="false"><span class="ic" aria-hidden="true">🌊</span>Sat<small>Nov 28</small></button>
-      <button role="tab" id="tab-sun" aria-controls="day-sun" aria-selected="false"><span class="ic" aria-hidden="true">🏞️</span>Sun<small>Nov 29</small></button>
-      <button role="tab" id="tab-mon" aria-controls="day-mon" aria-selected="false"><span class="ic" aria-hidden="true">🏠</span>Mon<small>Nov 30</small></button>
+      <button type="button" role="tab" id="tab-fri" aria-controls="day-fri" aria-selected="true"><span class="ic" aria-hidden="true">🚐</span>Fri<small>Nov 27</small></button>
+      <button type="button" role="tab" id="tab-sat" aria-controls="day-sat" aria-selected="false"><span class="ic" aria-hidden="true">🌊</span>Sat<small>Nov 28</small></button>
+      <button type="button" role="tab" id="tab-sun" aria-controls="day-sun" aria-selected="false"><span class="ic" aria-hidden="true">🏞️</span>Sun<small>Nov 29</small></button>
+      <button type="button" role="tab" id="tab-mon" aria-controls="day-mon" aria-selected="false"><span class="ic" aria-hidden="true">🏠</span>Mon<small>Nov 30</small></button>
     </div>
     <div class="panel" id="day-fri" role="tabpanel" aria-labelledby="tab-fri">
       <div class="card">
@@ -137,8 +137,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-off
   <section class="sec" id="costs">
     <div class="sec-label"><span class="idx">04</span><h2>Costs</h2></div>
     <div class="toggle" role="group" aria-label="Van option">
-      <button id="opt-indie" aria-pressed="true">Indie (primary)</button>
-      <button id="opt-escape" aria-pressed="false">Escape (backup)</button>
+      <button type="button" id="opt-indie" aria-pressed="true">Indie (primary)</button>
+      <button type="button" id="opt-escape" aria-pressed="false">Escape (backup)</button>
     </div>
     <div class="card">
       <table><tbody>
